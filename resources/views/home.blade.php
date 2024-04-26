@@ -373,8 +373,129 @@
           <div class="col-lg-6">
             <div class="d-flex flex-column h-100">
 
+              <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>General Statistics</title>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <style>
+                    .container {
+                        display: flex;
+                        justify-content: space-between;
+                        margin: 20px;
+                    }
+                    .chart-container {
+                        flex: 0 0 48%; /* Lebar 48%, biarkan 2% sisanya untuk jarak */
+                    }
+                </style>
+            </head>
+            <body>
+                <h2 class="font-weight-bolder mb-0">General Statistics</h2>
+                <div class="container">
+                    <div class="chart-container">
+                        <h3>Tebu Digiling per Jam</h3>
+                        <canvas id="tebuDigilingChart" width="400" height="400"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Produksi SHS</h3>
+                        <canvas id="produksiShsChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            
+                <script>
+                    // Data diagram batang Tebu Digiling per Jam
+                    var labelsTebuDigiling = ['6', '7', '8', '9', '10', '11', '12', '13'];
+                    var tebuPerJam = [10.0, 12.0, 5.0, 15.0, 18.0, 20.0, 17.0, 16.0];
+                    var tebuSampaiSekarang = [8.0, 10.0, 3.0, 8.0, 14.0, 18.0, 10.0, 9.0];
+            
+                    var tebuDigilingChart = new Chart(document.getElementById('tebuDigilingChart'), {
+                        type: 'bar',
+                        data: {
+                            labels: labelsTebuDigiling,
+                            datasets: [{
+                                label: 'Tebu Digiling per Jam',
+                                data: tebuPerJam,
+                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Tebu Digiling s.d Sekarang',
+                                data: tebuSampaiSekarang,
+                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+            
+                    // Data diagram batang Produksi SHS
+                    var labelsProduksiShs = ['1', '2', '3', '4', '5', '6', '7', '8'];
+                    var produksiPerJam = [15.0, 11.0, 13.0, 9.0, 10.0, 13.0, 14.0, 18.0];
+                    var produksiSampaiSekarang = [15.0, 26.0, 39.0, 48.0, 58.0, 71.0, 85.0, 0.0];
+                    var persentaseTebu = [100, 86.67, 74, 60, 51.43, 46.67, 48.24, 0];
+            
+                    var produksiShsChart = new Chart(document.getElementById('produksiShsChart'), {
+                        type: 'bar',
+                        data: {
+                            labels: labelsProduksiShs,
+                            datasets: [{
+                                label: 'Produksi SHS per Jam (Ton)',
+                                data: produksiPerJam,
+                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Produksi SHS s.d Sekarang (Ton)',
+                                data: produksiSampaiSekarang,
+                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1
+                            },
+                            {
+                                label: '% Tebu',
+                                data: persentaseTebu,
+                                type: 'line',
+                                yAxisID: 'percentage',
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                borderWidth: 2,
+                                pointRadius: 0
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                },
+                                yAxes: [{
+                                    id: 'percentage',
+                                    type: 'linear',
+                                    position: 'right',
+                                    ticks: {
+                                        min: 0,
+                                        max: 100
+                                    }
+                                }]
+                            }
+                          }
+        });
+    </script>
+</body>
+
+
+
+              
                 
-  <h2 class="font-weight-bolder mb-0">General Statistics</h2>
+  {{-- <h2 class="font-weight-bolder mb-0">General Statistics</h2>
   <div class="column">
   <head>
     <meta charset="UTF-8">
@@ -497,7 +618,7 @@
       });
   </script>
 </body>
-</div>
+</div> --}}
 
 
 
