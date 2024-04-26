@@ -20,34 +20,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
 <link rel="icon" type="image/png" href="./assets/img/favicon.png">
 
-<title>
-  
+<title> 
    Material Dashboard 2  by Creative Tim
-  
-
-  
-
-  
 </title>
 
 
@@ -395,24 +375,22 @@
 
                 
   <h2 class="font-weight-bolder mb-0">General Statistics</h2>
-
+  <div class="column">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diagram Batang Tebu Digiling per Jam</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+  </head>
 <body>
     <div>
         <canvas id="myBarChart" width="400" height="400"></canvas>
     </div>
-
     <script>
         // Data diagram batang
         var labels = ['6', '7', '8', '9', '10', '11', '12', '13'];
         var tebuPerJam = [10.0, 12.0, 5.0, 15.0, 18.0, 20.0, 17.0, 16.0];
         var tebuSampaiSekarang = [8.0, 10.0, 3.0, 8.0, 14.0, 18.0, 10.0, 9.0];
-
         var barData = {
             labels: labels,
             datasets: [
@@ -432,7 +410,6 @@
                 }
             ]
         };
-
         // Inisialisasi diagram batang
         var ctx = document.getElementById('myBarChart').getContext('2d');
         var myBarChart = new Chart(ctx, {
@@ -448,6 +425,96 @@
         });
     </script>
 </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagram Batang Produksi SHS</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div>
+      <canvas id="myBarChart" width="400" height="400"></canvas>
+  </div>
+
+  <script>
+      // Data diagram batang
+      var labels = ['1', '2', '3', '4', '5', '6', '7', '8'];
+      var produksiPerJam = [15.0, 11.0, 13.0, 9.0, 10.0, 13.0, 14.0, 18.0];
+      var produksiSampaiSekarang = [15.0, 26.0, 39.0, 48.0, 58.0, 71.0, 85.0, 0.0];
+      var persentaseTebu = [100, 86.67, 74, 60, 51.43, 46.67, 48.24, 0]; // Persentase tebu
+
+      var barData = {
+          labels: labels,
+          datasets: [
+              {
+                  label: 'Produksi SHS per Jam (Ton)',
+                  data: produksiPerJam,
+                  backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                  borderColor: 'rgba(54, 162, 235, 1)',
+                  borderWidth: 1
+              },
+              {
+                  label: 'Produksi SHS s.d Sekarang (Ton)',
+                  data: produksiSampaiSekarang,
+                  backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                  borderColor: 'rgba(255, 99, 132, 1)',
+                  borderWidth: 1
+              },
+              {
+                  label: '% Tebu',
+                  data: persentaseTebu,
+                  type: 'line',
+                  yAxisID: 'percentage',
+                  borderColor: 'rgba(75, 192, 192, 1)',
+                  backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                  borderWidth: 2,
+                  pointRadius: 0
+              }
+          ]
+      };
+
+      // Inisialisasi diagram batang
+      var ctx = document.getElementById('myBarChart').getContext('2d');
+      var myBarChart = new Chart(ctx, {
+          type: 'bar',
+          data: barData,
+          options: {
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  },
+                  yAxes: [{
+                      id: 'percentage',
+                      type: 'linear',
+                      position: 'right',
+                      ticks: {
+                          min: 0,
+                          max: 100
+                      }
+                  }]
+              }
+          }
+      });
+  </script>
+</body>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   {{-- <head>
