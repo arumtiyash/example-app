@@ -635,17 +635,21 @@
                   <thead>
                       <tr>
                           <th>Jam</th>
-                          <th>ICUMSA</th>
-                          <th>BJB</th>
-                          <th>Kadar Air</th>
+                          <th>Tebu Digiling per Jam (Ton)</th>
+                          <th>Tebu Digiling s.d (Ton)</th>
+                          <th>Produksi SHS per Jam (Ton)</th>
+                          <th>Produksi SHS s.d (Ton)</th>
+                          <th>% Tebu</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
                           <td>6</td>
-                          <td>4</td>
-                          <td>3.00</td>
-                          <td>8.00</td>
+                          <td>7.0</td>
+                          <td>4.0</td>
+                          <td>2.0</td>
+                          <td>6.0</td>
+                          <td>6.00</td>
                       </tr>
                       <!-- Tambahkan baris data lain sesuai kebutuhan -->
                   </tbody>
@@ -654,9 +658,9 @@
       
           <script>
               // Data grafik Tebu Digiling per Jam
-              var labelsTebuDigiling = ['6', '7', '8', '9', '10', '11', '12', '13'];
-              var tebuPerJam = [10.0, 12.0, 5.0, 15.0, 18.0, 20.0, 17.0, 16.0];
-              var tebuSampaiSekarang = [8.0, 10.0, 3.0, 8.0, 14.0, 18.0, 10.0, 9.0];
+var labelsTebuDigiling = ['6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '1', '2', '3', '4', '5', '6'];
+var tebuPerJam = [10.0, 12.0, 5.0, 15.0, 18.0, 20.0, 17.0, 16.0, 15.0, 11.0, 13.0, 9.0, 10.0, 13.0, 14.0, 18.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0];
+var tebuSampaiSekarang = [8.0, 10.0, 3.0, 8.0, 14.0, 18.0, 10.0, 9.0, 15.0, 26.0, 39.0, 48.0, 58.0, 71.0, 85.0, 0.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0];
               var tebuDigilingChart = new Chart(document.getElementById('tebuDigilingChart'), {
                   type: 'line',
                   data: {
@@ -698,7 +702,7 @@
               });
       
               // Data grafik Produksi SHS
-              var labelsProduksiShs = ['6', '7', '8', '9', '10', '11', '12', '13'];
+              var labelsProduksiShs = ['1', '2', '3', '4', '5', '6', '7', '8'];
               var produksiPerJam = [15.0, 11.0, 13.0, 9.0, 10.0, 13.0, 14.0, 18.0];
               var produksiSampaiSekarang = [15.0, 26.0, 39.0, 48.0, 58.0, 71.0, 85.0, 0.0];
               var persentaseTebu = [100, 86.67, 74, 60, 51.43, 46.67, 48.24, 0];
