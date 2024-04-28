@@ -20,15 +20,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
 <link rel="icon" type="image/png" href="./assets/img/favicon.png">
 
-<title> 
+<title>
+  
    Material Dashboard 2  by Creative Tim
+  
+
+  
+
+  
 </title>
+
+
 
 <!--     Fonts and icons     -->
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -350,276 +372,263 @@
                 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<h6>If you are not redirected automatically, follow <a href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard ">this link</a>.</h6>
-<div class="row">
-  <div class="col-lg-7 position-relative z-index-2">
-    <div class="card card-plain mb-4">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="d-flex flex-column h-100">
-
               <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>General Statistics</title>
-                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <title>Dashboard</title>
+                <!-- Tambahkan stylesheet untuk tampilan -->
                 <style>
+                    /* Tambahkan CSS di sini */
+                    body {
+                        background-color: #f4f4f4;
+                        font-family: Arial, sans-serif;
+                        margin: 0;
+                        padding: 0;
+                    }
                     .container {
                         display: flex;
-                        justify-content: space-between;
-                        margin: 20px;
+                        justify-content: center;
+                        align-items: flex-start;
+                        height: 100vh;
+                        padding-top: 20px;
                     }
-                    .chart-container {
-                        flex: 0 0 48%; /* Lebar 48%, biarkan 2% sisanya untuk jarak */
+                    .card {
+                        background-color: #fff;
+                        padding: 20px;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                        text-align: center;
+                        width: 100%;
+                        max-width: 800px;
+                        margin-bottom: 20px;
+                    }
+                    .card-title {
+                        font-size: 24px;
+                        margin-bottom: 10px;
+                        color: #333;
+                    }
+                    .card-content {
+                        font-size: 18px;
+                        color: #666;
+                    }
+                    #datetime {
+                        font-size: 36px;
+                        font-weight: bold;
+                        margin-top: 20px;
+                        color: #333;
+                    }
+                    .form-container {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 20px;
+                    }
+                    .form-container label {
+                        color: #333;
+                    }
+                    .form-container select,
+                    .form-container input[type="date"],
+                    .form-container button {
+                        padding: 10px;
+                        border-radius: 5px;
+                        border: 1px solid #ccc;
+                    }
+                    .form-container button {
+                        background-color: #87CEEB;
+                        color: #fff;
+                        border: none;
+                        cursor: pointer;
+                    }
+                    .info-container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
                     }
                 </style>
             </head>
-
-
-
-            
             <body>
-                <h2 class="font-weight-bolder mb-0">General Statistics</h2>
                 <div class="container">
-                    <div class="chart-container">
-                        <h3>Tebu Digiling per Jam</h3>
-                        <canvas id="tebuDigilingChart" width="400" height="400"></canvas>
-                    </div>
-                    <div class="chart-container">
-                        <h3>Produksi SHS</h3>
-                        <canvas id="produksiShsChart" width="400" height="400"></canvas>
+                    <div class="card">
+                        <div class="form-container">
+                            <form action="/dashboard/filter" method="POST">
+                                @csrf
+                                <label for="tanggal">Tanggal:</label>
+                                <input type="date" name="tanggal" id="tanggal">
+                                
+                                <label for="pabrik_gula">Pabrik Gula:</label>
+                                <select name="pabrik_gula" id="pabrik_gula">
+                                    <option value="Pabrik Gula Kwala Madu">Pabrik Gula Kwala Madu</option>
+                                    <option value="Pabrik Gula Sei Semayang">Pabrik Gula Sei Semayang</option>
+                                    <option value="Pabrik Gula Bunga Mayang">Pabrik Gula Bunga Mayang</option>
+                                    <option value="Pabrik Gula Cinta Manis">Pabrik Gula Cinta Manis</option>
+                                    <option value="Pabrik Gula Pangka">Pabrik Gula Pangka</option>
+                                </select>
+            
+                                <!-- Tambahkan filter hari giling di sini -->
+            
+                                <button type="submit">Filter</button>
+                            </form>
+                        </div>
+            
+                        {{-- <div class="info-container">
+                            <p id="datetime"></p>
+                        </div> --}}
                     </div>
                 </div>
             
                 <script>
-                    // Data diagram batang Tebu Digiling per Jam
-                    var labelsTebuDigiling = ['6', '7', '8', '9', '10', '11', '12', '13'];
-                    var tebuPerJam = [10.0, 12.0, 5.0, 15.0, 18.0, 20.0, 17.0, 16.0];
-                    var tebuSampaiSekarang = [8.0, 10.0, 3.0, 8.0, 14.0, 18.0, 10.0, 9.0];
-            
-                    var tebuDigilingChart = new Chart(document.getElementById('tebuDigilingChart'), {
-                        type: 'bar',
-                        data: {
-                            labels: labelsTebuDigiling,
-                            datasets: [{
-                                label: 'Tebu Digiling per Jam',
-                                data: tebuPerJam,
-                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                borderColor: 'rgba(54, 162, 235, 1)',
-                                borderWidth: 1
-                            },
-                            {
-                                label: 'Tebu Digiling s.d Sekarang',
-                                data: tebuSampaiSekarang,
-                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                                borderColor: 'rgba(255, 99, 132, 1)',
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                y: {
-                                    beginAtZero: true
-                                }
-                            }
-                        }
-                    });
-            
-                    // Data diagram batang Produksi SHS
-                    var labelsProduksiShs = ['1', '2', '3', '4', '5', '6', '7', '8'];
-                    var produksiPerJam = [15.0, 11.0, 13.0, 9.0, 10.0, 13.0, 14.0, 18.0];
-                    var produksiSampaiSekarang = [15.0, 26.0, 39.0, 48.0, 58.0, 71.0, 85.0, 0.0];
-                    var persentaseTebu = [100, 86.67, 74, 60, 51.43, 46.67, 48.24, 0];
-            
-                    var produksiShsChart = new Chart(document.getElementById('produksiShsChart'), {
-                        type: 'bar',
-                        data: {
-                            labels: labelsProduksiShs,
-                            datasets: [{
-                                label: 'Produksi SHS per Jam (Ton)',
-                                data: produksiPerJam,
-                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                borderColor: 'rgba(54, 162, 235, 1)',
-                                borderWidth: 1
-                            },
-                            {
-                                label: 'Produksi SHS s.d Sekarang (Ton)',
-                                data: produksiSampaiSekarang,
-                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                                borderColor: 'rgba(255, 99, 132, 1)',
-                                borderWidth: 1
-                            },
-                            {
-                                label: '% Tebu',
-                                data: persentaseTebu,
-                                type: 'line',
-                                yAxisID: 'percentage',
-                                borderColor: 'rgba(75, 192, 192, 1)',
-                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                                borderWidth: 2,
-                                pointRadius: 0
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                y: {
-                                    beginAtZero: true
-                                },
-                                yAxes: [{
-                                    id: 'percentage',
-                                    type: 'linear',
-                                    position: 'right',
-                                    ticks: {
-                                        min: 0,
-                                        max: 100
-                                    }
-                                }]
-                            }
-                          }
-        });
-    </script>
-</body>
-
-
-
-              
-                
-  {{-- <h2 class="font-weight-bolder mb-0">General Statistics</h2>
-  <div class="column">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagram Batang Tebu Digiling per Jam</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
-<body>
-    <div>
-        <canvas id="myBarChart" width="400" height="400"></canvas>
-    </div>
-    <script>
-        // Data diagram batang
-        var labels = ['6', '7', '8', '9', '10', '11', '12', '13'];
-        var tebuPerJam = [10.0, 12.0, 5.0, 15.0, 18.0, 20.0, 17.0, 16.0];
-        var tebuSampaiSekarang = [8.0, 10.0, 3.0, 8.0, 14.0, 18.0, 10.0, 9.0];
-        var barData = {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Tebu Digiling per Jam',
-                    data: tebuPerJam,
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                },
-                {
-                    label: 'Tebu Digiling s.d Sekarang',
-                    data: tebuSampaiSekarang,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }
-            ]
-        };
-        // Inisialisasi diagram batang
-        var ctx = document.getElementById('myBarChart').getContext('2d');
-        var myBarChart = new Chart(ctx, {
-            type: 'bar',
-            data: barData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+                    // Fungsi untuk menampilkan waktu real-time
+                    function updateTime() {
+                        var now = new Date();
+                        var hours = now.getHours();
+                        var minutes = now.getMinutes();
+                        var seconds = now.getSeconds();
+                        var timeString = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+                        document.getElementById('datetime').textContent = timeString;
                     }
-                }
-            }
-        });
-    </script>
-</body>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagram Batang Produksi SHS</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
+            
+                    // Panggil updateTime setiap detik
+                    setInterval(updateTime, 1000);
+                </script>
+            </body>
+
+
+
+
+
+
+
+              <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Dashboard</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                <style>
+                  .card {
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    background-color: #f8f9fa;
+                    margin-bottom: 20px;
+                  }
+                  .card-body {
+                    padding: 20px;
+                  }
+                  .section-title {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #007bff;
+                  }
+                  .data {
+                    font-size: 16px;
+                    color: #333;
+                  }
+                  .divider {
+                    border-left: 1px solid #ccc;
+                    height: 100%;
+                    margin: 0 10px;
+                  }
+                  /* Menghilangkan margin pada body */
+                  body, html {
+                    margin: 0;
+                    padding: 0;
+                  }
+                </style>
+              </head>
+              <body>
+                <!-- Menghapus container untuk memungkinkan card memanjang ke pinggir halaman -->
+                <div class="row">
+                  <!-- Menggunakan col-12 agar card memanjang ke pinggir halaman -->
+                  <div class="col-12">
+                    <div class="card d-flex flex-row">
+                      <div class="card-body">
+                        <div class="section-title">
+                          23 April
+                        </div>
+                        <div class="data">
+                          Hari Giling: 1
+                        </div>
+                      </div>
+                      <div class="divider"></div>
+                      <div class="card-body">
+                        <div class="section-title">
+                          Jam Aktual
+                        </div>
+                        <div class="data">
+                          PT SGN, TANGGUH, TUMBUH, JUARA
+                        </div>
+                      </div>
+                      <div class="divider"></div>
+                      <div class="card-body">
+                        <div class="section-title">
+                          Tebu Digiling
+                        </div>
+                        <div class="data">
+                          0,0 ton
+                        </div>
+                      </div>
+                      <div class="divider"></div>
+                      <div class="card-body">
+                        <div class="section-title">
+                          SHS
+                        </div>
+                        <div class="data">
+                          0,0 ton
+                        </div>
+                      </div>
+                      <div class="divider"></div>
+                    <div class="card-body">
+                      <div class="section-title">
+                        SHS% Tebu
+                      </div>
+                      <div class="data">
+                        0,00
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </body>
+
+
+{{-- <div class="row">
+ <div class="col-md-3">
   <div>
-      <canvas id="myBarChart" width="400" height="400"></canvas>
+    23
   </div>
+  <div>
+    april
+  </div>
+  <div class="row">
+    <div>
+      hari giling 1
+    </div>
+  </div>
+ </div>
 
-  <script>
-      // Data diagram batang
-      var labels = ['1', '2', '3', '4', '5', '6', '7', '8'];
-      var produksiPerJam = [15.0, 11.0, 13.0, 9.0, 10.0, 13.0, 14.0, 18.0];
-      var produksiSampaiSekarang = [15.0, 26.0, 39.0, 48.0, 58.0, 71.0, 85.0, 0.0];
-      var persentaseTebu = [100, 86.67, 74, 60, 51.43, 46.67, 48.24, 0]; // Persentase tebu
+ <div class="col-md-3">
+  <div>
+    jam aktual
+  </div>
+  <div>
+    PT SGN, TANGGUH, TUMBUH, JUARA
+  </div>
+ </div>
 
-      var barData = {
-          labels: labels,
-          datasets: [
-              {
-                  label: 'Produksi SHS per Jam (Ton)',
-                  data: produksiPerJam,
-                  backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                  borderColor: 'rgba(54, 162, 235, 1)',
-                  borderWidth: 1
-              },
-              {
-                  label: 'Produksi SHS s.d Sekarang (Ton)',
-                  data: produksiSampaiSekarang,
-                  backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                  borderColor: 'rgba(255, 99, 132, 1)',
-                  borderWidth: 1
-              },
-              {
-                  label: '% Tebu',
-                  data: persentaseTebu,
-                  type: 'line',
-                  yAxisID: 'percentage',
-                  borderColor: 'rgba(75, 192, 192, 1)',
-                  backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                  borderWidth: 2,
-                  pointRadius: 0
-              }
-          ]
-      };
+ <div class="col-md-3">
+  <div>
+    Tebu Giling 0,0 ton
+  </div>
+  <div>
+    SHS 0,0 ton
+  </div>
+ </div>
 
-      // Inisialisasi diagram batang
-      var ctx = document.getElementById('myBarChart').getContext('2d');
-      var myBarChart = new Chart(ctx, {
-          type: 'bar',
-          data: barData,
-          options: {
-              scales: {
-                  y: {
-                      beginAtZero: true
-                  },
-                  yAxes: [{
-                      id: 'percentage',
-                      type: 'linear',
-                      position: 'right',
-                      ticks: {
-                          min: 0,
-                          max: 100
-                      }
-                  }]
-              }
-          }
-      });
-  </script>
-</body>
+ <div class="col-md-3">
+  <div>
+    SHS Tebu 0,00
+  </div>
+ </div>
 </div> --}}
 
 
@@ -635,54 +644,24 @@
 
 
 
+              
 
 
 
 
 
-  {{-- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bar Chart</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-    <div>
-        <canvas id="myBarChart" width="400" height="400"></canvas>
-    </div>
-
-    <script>
-        // Data diagram batang
-        var barData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'Sales',
-                data: [65, 59, 80, 81, 56, 55, 40],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        };
-
-        // Inisialisasi diagram batang
-        var ctx = document.getElementById('myBarChart').getContext('2d');
-        var myBarChart = new Chart(ctx, {
-            type: 'bar',
-            data: barData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-</body> --}}
 
 
 
-  
+{{-- <h6>If you are not redirected automatically, follow <a href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard ">this link</a>.</h6> --}}
+<div class="row">
+  <div class="col-lg-7 position-relative z-index-2">
+    <div class="card card-plain mb-4">
+      <div class="card-body p-3">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="d-flex flex-column h-100">
+  <h2 class="font-weight-bolder mb-0">General Statistics</h2>
 </div>
 
           </div>
@@ -1055,9 +1034,6 @@
 
          
        </main>
-    
-
-      
           <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
       <i class="material-icons py-2">settings</i>
@@ -1153,103 +1129,11 @@
     </div>
 </div>
 
-      
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--   Core JS Files   -->
 <script src="./assets/js/core/popper.min.js" ></script>
 <script src="./assets/js/core/bootstrap.min.js" ></script>
 <script src="./assets/js/plugins/perfect-scrollbar.min.js" ></script>
 <script src="./assets/js/plugins/smooth-scrollbar.min.js" ></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
   var win = navigator.platform.indexOf('Win') > -1;
   if (win && document.querySelector('#sidenav-scrollbar')) {
