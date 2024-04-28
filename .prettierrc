@@ -1,0 +1,7 @@
+{
+    "plugins": ["@shufo/prettier-plugin-blade"],
+    "bladeSingleQuote": false, 
+    "bladePrintWidth": 120,
+    "prettier.useEditorConfig": true
+  }
+  
