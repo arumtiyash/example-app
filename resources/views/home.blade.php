@@ -566,6 +566,8 @@
         
         
         <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Dashboard</title>
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
           <style>
@@ -626,9 +628,19 @@
                           </div>
                       </div>
                   </div>
-                  <div class="chart-container">
-                      <h3 class="chart-title">Analisis GKP</h3>
-                      <canvas id="analisisGKPChart" width="400" height="200"></canvas>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="chart-container">
+                              <h3 class="chart-title">Analisis GKP</h3>
+                              <canvas id="analisisGKPChart" width="400" height="200"></canvas>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="chart-container">
+                              <h3 class="chart-title">Flow Imbibisi</h3>
+                              <canvas id="flowImbibisiChart" width="400" height="200"></canvas>
+                          </div>
+                      </div>
                   </div>
               </div>
               <table>
@@ -658,9 +670,9 @@
       
           <script>
               // Data grafik Tebu Digiling per Jam
-var labelsTebuDigiling = ['6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '1', '2', '3', '4', '5', '6'];
-var tebuPerJam = [10.0, 12.0, 5.0, 15.0, 18.0, 20.0, 17.0, 16.0, 15.0, 11.0, 13.0, 9.0, 10.0, 13.0, 14.0, 18.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0];
-var tebuSampaiSekarang = [8.0, 10.0, 3.0, 8.0, 14.0, 18.0, 10.0, 9.0, 15.0, 26.0, 39.0, 48.0, 58.0, 71.0, 85.0, 0.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0];
+              var labelsTebuDigiling = ['6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '1', '2', '3', '4', '5', '6'];
+              var tebuPerJam = [10.0, 12.0, 5.0, 15.0, 18.0, 20.0, 17.0, 16.0, 15.0, 11.0, 13.0, 9.0, 10.0, 13.0, 14.0, 18.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0];
+              var tebuSampaiSekarang = [8.0, 10.0, 3.0, 8.0, 14.0, 18.0, 10.0, 9.0, 15.0, 26.0, 39.0, 48.0, 58.0, 71.0, 85.0, 0.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0];
               var tebuDigilingChart = new Chart(document.getElementById('tebuDigilingChart'), {
                   type: 'line',
                   data: {
@@ -815,6 +827,46 @@ var tebuSampaiSekarang = [8.0, 10.0, 3.0, 8.0, 14.0, 18.0, 10.0, 9.0, 15.0, 26.0
                           fill: true,
                           tension: 0.4,
                           stepped: false
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          y: {
+                              beginAtZero: true
+                          }
+                      }
+                  }
+              });
+      
+              // Data grafik Flow Imbibisi
+              var labelsFlowImbibisi = ['6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '1', '2', '3', '4', '5', '6'];
+              var flowImbibisi_Ton = [1, 2, 7, 5, 5, 5, 5, 5, 5, 5, 8, 5, 5, 5, 5, 8, 5, 5, 5, 6, 5, 5, 5, 5];
+              var flowImbibisi_PersentaseTebu = [11.0, '', 12.0, 9.0, 8.0, 7.0, 4.0, 5.0, 9.0, 2.0, 5.0, 8.0, 8.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0];
+              var flowImbibisiChart = new Chart(document.getElementById('flowImbibisiChart'), {
+                  type: 'bar',
+                  data: {
+                      labels: labelsFlowImbibisi,
+                      datasets: [{
+                          label: 'Flow Imbibisi (Ton)',
+                          data: flowImbibisi_Ton,
+                          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                          borderColor: 'rgba(75, 192, 192, 1)',
+                          borderWidth: 2,
+                          pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                          pointRadius: 5,
+                          pointHoverRadius: 8,
+                          fill: true
+                      },
+                      {
+                          label: 'Persentase Tebu',
+                          data: flowImbibisi_PersentaseTebu,
+                          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                          borderColor: 'rgba(255, 99, 132, 1)',
+                          borderWidth: 2,
+                          pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+                          pointRadius: 5,
+                          pointHoverRadius: 8,
+                          fill: true
                       }]
                   },
                   options: {
