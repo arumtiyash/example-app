@@ -897,6 +897,14 @@
                 </div>
             </div> 
 
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">NPP</div>
+                    <div class="card-body">
+                        <canvas id="nppChart"></canvas>
+                    </div>
+                </div>
+            </div> 
               
             </div>
         </div>
@@ -2172,6 +2180,78 @@
         }
     });
 </script>
+
+<script>
+    // Data untuk grafik NPP
+    var labelsShiftNPP = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+    var brixData = [40.0, 30.0, 20.0, 90.0];
+    var polData = [25.0, 30.0, 25.0, 80.0];
+    var hkData = [30.0, 45.0, 20.0, 95.0];
+
+    // Membuat grafik NPP
+    var ctxNPP = document.getElementById('nppChart').getContext('2d');
+    var nppChart = new Chart(ctxNPP, {
+        type: 'line', // Jenis grafik
+        data: {
+            labels: labelsShiftNPP,
+            datasets: [{
+                label: 'Brix',
+                data: brixData,
+                fill: false,
+                borderColor: 'rgba(255, 99, 132, 1)', // Warna garis untuk Brix
+                borderWidth: 2,
+                pointRadius: 5, // Ukuran titik
+                pointBackgroundColor: 'rgba(255, 99, 132, 1)', // Warna titik
+                pointBorderColor: 'rgba(255, 99, 132, 1)' // Warna border titik
+            }, {
+                label: 'Pol',
+                data: polData,
+                fill: false,
+                borderColor: 'rgba(54, 162, 235, 1)', // Warna garis untuk Pol
+                borderWidth: 2,
+                pointRadius: 5, // Ukuran titik
+                pointBackgroundColor: 'rgba(54, 162, 235, 1)', // Warna titik
+                pointBorderColor: 'rgba(54, 162, 235, 1)' // Warna border titik
+            }, {
+                label: 'HK',
+                data: hkData,
+                fill: false,
+                borderColor: 'rgba(255, 205, 86, 1)', // Warna garis untuk HK
+                borderWidth: 2,
+                pointRadius: 5, // Ukuran titik
+                pointBackgroundColor: 'rgba(255, 205, 86, 1)', // Warna titik
+                pointBorderColor: 'rgba(255, 205, 86, 1)' // Warna border titik
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom' // Tampilkan legend di bagian bawah
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Nilai'
+                    }
+                }
+            },
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 10,
+                    top: 10,
+                    bottom: 10
+                }
+            },
+            responsive: true
+        }
+    });
+</script>
+
 
         </body>
 
