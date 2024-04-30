@@ -744,7 +744,7 @@
                             </div>
                         </div>
 
-                        <div class="card" style="max-width: 600px; margin: auto; background-color: white;">
+                        <div class="card" style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
                             <div class="card-body">
                                 <h5 class="card-title text-center">TEKANAN UAP</h5>
                                 <canvas id="tekananUapChart"></canvas>
@@ -763,21 +763,38 @@
                 </div>
             </div>
 
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <div class="container">
-              <div class="card">
-                  <h2 class="font-weight-bold mb-3 text-center"
-                      style="font-size: 23px; font-family: 'Montserrat', sans-serif; color: #333;"> PLOEG </h2>
-                  <div class="row">
-                      <div class="col-md-6">
-                          <div class="chart-container card-body">
-                              <h3 class="chart-title">REKAP SHIFT</h3>
-                              <canvas id="rekapshiftChart" width="400" height="200"></canvas>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+            <title>PLOEG Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card">
+            <div class="card-header bg-primary text-white text-center">
+                <h2 class="font-weight-bold mb-0">PLOEG</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <h3 class="chart-title text-center">REKAP SHIFT</h3>
+                            <canvas id="rekapshiftChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="summary-card p-3">
+                            <h4 class="card-title text-center">Summary</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Total Tebu Digiling: 350 Ton</li>
+                                <li class="list-group-item">Rata-rata Tebu per Jam: 58.3 Ton</li>
+                                <li class="list-group-item">Shift Terakhir: Siang</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
             <script>
                 // Data grafik Tebu Digiling per Jam
