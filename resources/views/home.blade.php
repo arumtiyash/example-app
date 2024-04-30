@@ -811,7 +811,7 @@
 </head>
         <div class="card">
             <div class="card-header bg-primary text-white text-center">
-                <h2 class="font-weight-bold mb-0">PLOEG</h2>
+                <h2 class="font-weight-bold mb-0">DASHBOARD SUMMARY</h2>
             </div>
             <div class="card-body">
                 <div class="row">
