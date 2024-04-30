@@ -858,6 +858,52 @@
                   </div>
               </div>
 
+              <div class="col-md-6">
+                      <div class="chart-container">
+                          <h3 class="chart-title text-center">ANALISIS GKP</h3>
+                          <canvas id="analisaGKPChart" width="400" height="200"></canvas>
+                      </div>
+                  </div>
+            
+            <div class="col-md-6">
+              <div class="summary-card p-3">
+                  <h4 class="card-title text-center">Summary Produksi GKP</h4>
+                  <ul class="list-group list-group-flush">
+                      <!-- Isi dengan informasi summary yang sesuai -->
+                      <li class="list-group-item">Total Produksi GKP: 90 Ton</li>
+                      <li class="list-group-item">Rata-rata ICUMSA: 30</li>
+                      <li class="list-group-item">Rata-rata BJB: 25</li>
+                      <li class="list-group-item">Rata-rata Kadar Air: 21.67</li>
+                      <!-- Tambahkan item summary lainnya sesuai kebutuhan -->
+                  </ul>
+              </div>
+          </div>
+
+   
+          <div class="row">
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <h3 class="chart-title text-center">ANALISIS NM</h3>
+                    <canvas id="analisaNMChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        
+            <div class="col-md-6">
+                <div class="summary-card p-3">
+                    <h4 class="card-title text-center">Summary Produksi NM</h4>
+                    <ul class="list-group list-group-flush">
+                        <!-- Isi dengan informasi summary yang sesuai -->
+                        <li class="list-group-item">Total Produksi NM: 100%</li>
+                        {{-- <li class="list-group-item">Rata-rata Persentase Tebu: 33.33%</li> --}}
+                        <!-- Tambahkan item summary lainnya sesuai kebutuhan -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+          
+
+
                 </div>
             </div>
         </div>
@@ -1882,6 +1928,120 @@
             <!-- Tambahkan item summary lainnya sesuai kebutuhan -->
         </ul>
     `;
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Data untuk Analisa GKP
+    var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
+    var icumsa = [30, 25, 35]; // Nilai ICUMSA
+    var bjb = [25, 30, 20]; // Nilai BJB
+    var kadarAir = [10, 25, 30]; // Kadar air
+
+    // Membuat grafik Analisa GKP
+    var ctxAnalisaGKP = document.getElementById('analisaGKPChart').getContext('2d');
+    var analisaGKPChart = new Chart(ctxAnalisaGKP, {
+        type: 'bar',
+        data: {
+            labels: labelsShift,
+            datasets: [{
+                label: 'ICUMSA',
+                data: icumsa,
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1,
+                yAxisID: 'ICUMSA',
+                order: 2
+            }, {
+                label: 'BJB',
+                data: bjb,
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1,
+                yAxisID: 'ICUMSA',
+                order: 2
+            }, {
+                label: 'Kadar Air',
+                data: kadarAir,
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                yAxisID: 'KadarAir',
+                order: 1
+            }]
+        },
+        options: {
+            scales: {
+                ICUMSA: {
+                    type: 'linear',
+                    position: 'left',
+                    title: {
+                        display: true,
+                        text: 'ICUMSA / BJB'
+                    }
+                },
+                KadarAir: {
+                    type: 'linear',
+                    position: 'right',
+                    title: {
+                        display: true,
+                        text: 'Kadar Air (%)'
+                    },
+                    grid: {
+                        drawOnChartArea: false
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Shift'
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Data untuk ANALISIS NM
+    var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
+    var nmPersentaseTebu = [55.0, 20.0, 25.0]; // Persentase NM Tebu
+
+    // Membuat grafik ANALISIS NM
+    var ctxAnalisaNM = document.getElementById('analisaNMChart').getContext('2d');
+    var analisaNMChart = new Chart(ctxAnalisaNM, {
+        type: 'pie',
+        data: {
+            labels: labelsShift,
+            datasets: [{
+                label: 'Persentase NM Tebu',
+                data: nmPersentaseTebu,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 205, 86, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 205, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Persentase NM Tebu'
+                    }
+                }
+            }
+        }
+    });
 </script>
 
 
