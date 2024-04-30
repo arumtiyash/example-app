@@ -763,7 +763,7 @@
                             style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
                             <div class="card-body">
                                 <h5 class="card-title text-center"> REKAP SHIFT </h5>
-                                <canvas id="rekapshiftChart"></canvas>
+                                <canvas id="vacuumMasakanChart"></canvas>
                             </div>
                         </div>
 
@@ -1542,107 +1542,6 @@
                     }
                 });
             </script>
-            <script>
-              // Data untuk PLOEG JAM TEBU DIGILING
-              var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
-              var tebuDigilingPerJam = [50.0, 75.0, 50.0, 175.0]; // Ton
-              var tebuDigilingTotal = [50.0, 125.0, 175.0, 350.0]; // Ton
-          
-              // Membuat grafik PLOEG JAM TEBU DIGILING
-              var ctxJamTebuDigiling = document.getElementById('jamTebuDigilingChart').getContext('2d');
-              var jamTebuDigilingChart = new Chart(ctxJamTebuDigiling, {
-                  type: 'bar',
-                  data: {
-                      labels: labelsShift,
-                      datasets: [
-                        {
-                          label: 'Tebu Digiling per Jam (Ton)',
-                          data: tebuDigilingPerJam,
-                          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                          borderColor: 'rgba(255, 99, 132, 1)',
-                          borderWidth: 1
-                        },
-                        {
-                          label: 'Total Tebu Digiling (Ton)',
-                          data: tebuDigilingTotal,
-                          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                          borderColor: 'rgba(54, 162, 235, 1)',
-                          borderWidth: 1
-                        }
-                      ]
-                  },
-                  options: {
-                      scales: {
-                          y: {
-                              beginAtZero: true,
-                              title: {
-                                  display: true,
-                                  text: 'Tebu Digiling (Ton)'
-                              }
-                          },
-                          x: {
-                              title: {
-                                  display: true,
-                                  text: 'Shift'
-                              }
-                          }
-                      }
-                  }
-              });
-          </script>
-
-<script>
-  // Data untuk PLOEG JAM TEBU DIGILING
-  var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
-  var tebuDigilingPerJam = [50.0, 75.0, 50.0, 0.0]; // Ton
-  var tebuDigilingTotal = [50.0, 125.0, 175.0, 350.0]; // Ton
-
-  // Membuat grafik PLOEG JAM TEBU DIGILING
-  var ctxRekapShift = document.getElementById('rekapshiftChart').getContext('2d');
-  var rekapShiftChart = new Chart(ctxRekapShift, {
-      type: 'bar',
-      data: {
-          labels: labelsShift,
-          datasets: [
-              {
-                  label: 'Tebu Digiling per Jam (Ton)',
-                  data: tebuDigilingPerJam,
-                  backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                  borderColor: 'rgba(255, 99, 132, 1)',
-                  borderWidth: 1
-              },
-              {
-                  label: 'Total Tebu Digiling (Ton)',
-                  data: tebuDigilingTotal,
-                  backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 1)'],
-                  borderColor: ['rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)'],
-                  borderWidth: 1
-              }
-          ]
-      },
-      options: {
-          scales: {
-              y: {
-                  beginAtZero: true,
-                  title: {
-                      display: true,
-                      text: 'Tebu Digiling (Ton)'
-                  }
-              },
-              x: {
-                  title: {
-                      display: true,
-                      text: 'Shift'
-                  }
-              }
-          }
-      }
-  });
-</script>
-          
-          
-          
-
 
         </body>
 
