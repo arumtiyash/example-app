@@ -837,17 +837,20 @@
                             </ul>
                         </div>
                     </div>
+
+                    <div class="card" style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
+                      <div class="card-body">
+                          <h5 class="card-title text-center">PRODUKSI SHS & PERSANTASE TEBU PER SHIFT</h5>
+                          <canvas id="shsChart"></canvas>
+                      </div>
+                  </div>
+
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="card" style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
-      <div class="card-body">
-          <h5 class="card-title text-center"> PRODUKSI SHS & PERSANTASE TEBU PER SHIFT </h5>
-          <canvas id="shsChart"></canvas>
-      </div>
-  </div>
+
 
 
             <script>
