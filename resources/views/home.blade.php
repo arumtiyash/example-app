@@ -617,37 +617,14 @@
                   <div class="row">
                       <div class="col-md-6">
                           <div class="chart-container">
-<<<<<<< HEAD
-                              <h3 class="chart-title">Tebu Digiling per Jam</h3>
-=======
                               <h3 class="chart-title">TEBU DIGILING PER JAM</h3>
->>>>>>> d7bc4036ee5e467080321cd1cb633db3bb2c5e80
                               <canvas id="tebuDigilingChart" width="400" height="200"></canvas>
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="chart-container">
-<<<<<<< HEAD
-                              <h3 class="chart-title">Produksi SHS</h3>
-                              <canvas id="produksiShsChart" width="400" height="200"></canvas>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-md-6">
-                          <div class="chart-container">
-                              <h3 class="chart-title">Analisis GKP</h3>
-                              <canvas id="analisisGKPChart" width="400" height="200"></canvas>
-                          </div>
-                      </div>
-                      <div class="col-md-6">
-                          <div class="chart-container">
-                              <h3 class="chart-title">Flow Imbibisi</h3>
-                              <canvas id="flowImbibisiChart" width="400" height="200"></canvas>
-=======
                               <h3 class="chart-title">PRODUKSI SHS</h3>
                               <canvas id="produksiShsChart" width="400" height="200"></canvas>
->>>>>>> d7bc4036ee5e467080321cd1cb633db3bb2c5e80
                           </div>
                       </div>
                   </div>
@@ -746,10 +723,7 @@
                       </div>
                   </div>
               </div>
-<<<<<<< HEAD
-=======
                       
->>>>>>> d7bc4036ee5e467080321cd1cb633db3bb2c5e80
               <table>
                   <thead>
                       <tr>
@@ -773,13 +747,9 @@
                       <!-- Tambahkan baris data lain sesuai kebutuhan -->
                   </tbody>
               </table>
-<<<<<<< HEAD
-          </div>
-=======
 
 
 
->>>>>>> d7bc4036ee5e467080321cd1cb633db3bb2c5e80
       
           <script>
               // Data grafik Tebu Digiling per Jam
@@ -887,67 +857,6 @@
                               ticks: {
                                   min: 0,
                                   max: 100
-<<<<<<< HEAD
-                              }
-                          }]
-                      }
-                  }
-              });
-      
-              // Data grafik Analisis GKP
-              var labelsAnalisisGKP = ['6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '1', '2', '3', '4', '5', '6'];
-              var analisisGKP_ICUMSA = [4, 6, 2, 5, 4, 4, 4, 5, 4, 4, 4, 8, 4, 7, 4, 4, 4, 4, 7, 4, 4, 4, 4, 6];
-              var analisisGKP_BJB = [3, 3, 8, 3, 3, 6, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3];
-              var analisisGKP_KadarAir = [8, 9, 8, 8, 8, 8, 11, 8, 8, 8, 11, 8, 8, 8, 11, 8, 8, 8, 8, 8, 8, 8, 8, 8];
-              var analisisGKPChart = new Chart(document.getElementById('analisisGKPChart'), {
-                  type: 'line',
-                  data: {
-                      labels: labelsAnalisisGKP,
-                      datasets: [{
-                          label: 'ICUMSA',
-                          data: analisisGKP_ICUMSA,
-                          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                          borderColor: 'rgba(255, 99, 132, 1)',
-                          borderWidth: 2,
-                          pointBackgroundColor: 'rgba(255, 99, 132, 1)',
-                          pointRadius: 5,
-                          pointHoverRadius: 8,
-                          fill: true,
-                          tension: 0.4,
-                          stepped: false
-                      },
-                      {
-                          label: 'BJB',
-                          data: analisisGKP_BJB,
-                          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                          borderColor: 'rgba(54, 162, 235, 1)',
-                          borderWidth: 2,
-                          pointBackgroundColor: 'rgba(54, 162, 235, 1)',
-                          pointRadius: 5,
-                          pointHoverRadius: 8,
-                          fill: true,
-                          tension: 0.4,
-                          stepped: false
-                      },
-                      {
-                          label: 'Kadar Air',
-                          data: analisisGKP_KadarAir,
-                          backgroundColor: 'rgba(255, 206, 86, 0.2)',
-                          borderColor: 'rgba(255, 206, 86, 1)',
-                          borderWidth: 2,
-                          pointBackgroundColor: 'rgba(255, 206, 86, 1)',
-                          pointRadius: 5,
-                          pointHoverRadius: 8,
-                          fill: true,
-                          tension: 0.4,
-                          stepped: false
-                      }]
-                  },
-                  options: {
-                      scales: {
-                          y: {
-                              beginAtZero: true
-=======
                               }
                           }]
                       }
@@ -1125,54 +1034,10 @@
                                   display: true,
                                   text: 'Brix (%)'
                               }
->>>>>>> d7bc4036ee5e467080321cd1cb633db3bb2c5e80
                           }
                       }
                   }
               });
-<<<<<<< HEAD
-      
-              // Data grafik Flow Imbibisi
-              var labelsFlowImbibisi = ['6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '1', '2', '3', '4', '5', '6'];
-              var flowImbibisi_Ton = [1, 2, 7, 5, 5, 5, 5, 5, 5, 5, 8, 5, 5, 5, 5, 8, 5, 5, 5, 6, 5, 5, 5, 5];
-              var flowImbibisi_PersentaseTebu = [11.0, '', 12.0, 9.0, 8.0, 7.0, 4.0, 5.0, 9.0, 2.0, 5.0, 8.0, 8.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0];
-              var flowImbibisiChart = new Chart(document.getElementById('flowImbibisiChart'), {
-                  type: 'bar',
-                  data: {
-                      labels: labelsFlowImbibisi,
-                      datasets: [{
-                          label: 'Flow Imbibisi (Ton)',
-                          data: flowImbibisi_Ton,
-                          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                          borderColor: 'rgba(75, 192, 192, 1)',
-                          borderWidth: 2,
-                          pointBackgroundColor: 'rgba(75, 192, 192, 1)',
-                          pointRadius: 5,
-                          pointHoverRadius: 8,
-                          fill: true
-                      },
-                      {
-                          label: 'Persentase Tebu',
-                          data: flowImbibisi_PersentaseTebu,
-                          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                          borderColor: 'rgba(255, 99, 132, 1)',
-                          borderWidth: 2,
-                          pointBackgroundColor: 'rgba(255, 99, 132, 1)',
-                          pointRadius: 5,
-                          pointHoverRadius: 8,
-                          fill: true
-                      }]
-                  },
-                  options: {
-                      scales: {
-                          y: {
-                              beginAtZero: true
-                          }
-                      }
-                  }
-              });
-          </script>
-=======
             </script>
         
               <script>
@@ -1600,7 +1465,6 @@ var beVacuumChart = new Chart(ctxBeVacuum, {
   });
 </script>
 
->>>>>>> d7bc4036ee5e467080321cd1cb633db3bb2c5e80
       </body>
 
 
