@@ -758,18 +758,25 @@
                                 <canvas id="vacuumMasakanChart"></canvas>
                             </div>
                         </div>
-
-                        <div class="card"
-                            style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
-                            <div class="card-body">
-                                <h5 class="card-title text-center"> REKAP SHIFT </h5>
-                                <canvas id="rekapshiftChart"></canvas>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <div class="container">
+              <div class="card">
+                  <h2 class="font-weight-bold mb-3 text-center"
+                      style="font-size: 23px; font-family: 'Montserrat', sans-serif; color: #333;"> PLOEG </h2>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="chart-container card-body">
+                              <h3 class="chart-title">REKAP SHIFT</h3>
+                              <canvas id="rekapshiftChart" width="400" height="200"></canvas>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
             <script>
                 // Data grafik Tebu Digiling per Jam
@@ -1591,6 +1598,8 @@
               });
           </script>
 
+
+           
 <script>
   // Data untuk PLOEG JAM TEBU DIGILING
   var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
@@ -1603,22 +1612,19 @@
       type: 'bar',
       data: {
           labels: labelsShift,
-          datasets: [
-              {
-                  label: 'Tebu Digiling per Jam (Ton)',
-                  data: tebuDigilingPerJam,
-                  backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                  borderColor: 'rgba(255, 99, 132, 1)',
-                  borderWidth: 1
-              },
-              {
-                  label: 'Total Tebu Digiling (Ton)',
-                  data: tebuDigilingTotal,
-                  backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 1)'],
-                  borderColor: ['rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)'],
-                  borderWidth: 1
-              }
-          ]
+          datasets: [{
+              label: 'Tebu Digiling per Jam (Ton)',
+              data: tebuDigilingPerJam,
+              backgroundColor: 'rgba(255, 99, 132, 0.5)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+          }, {
+              label: 'Total Tebu Digiling (Ton)',
+              data: tebuDigilingTotal,
+              backgroundColor: 'rgba(54, 162, 235, 0.5)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+          }]
       },
       options: {
           scales: {
@@ -1639,7 +1645,8 @@
       }
   });
 </script>
-          
+
+
           
           
 
