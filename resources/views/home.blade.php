@@ -450,6 +450,111 @@
                 </div>
             </div>
 
+
+
+            <div class ="container">
+            <div class="row row-cols-1 row-cols-sm-2">
+              
+                    <div class="col-lg-3 col-sm"> 
+                        <div class="card mb-2" style="padding: 5px; margin-bottom: 10px;"> <!-- Mengurangi padding pada card -->
+                            <div class="card-header p-2 pt-1" style="padding-bottom: 3px; height: 60px;"> <!-- Mengurangi padding pada card header -->
+                                <div class="icon icon-md  icon-shape shadow-dark bg-gradient-dark shadow text-center  border-radius-xl mt-n1  position-absolute" style="padding: 2px;left: 10px;"> <!-- Mengurangi padding pada ikon -->
+                                    <i class="material-icons opacity-10" style="font-size: 10px;">weekend</i> <!-- Ubah ukuran ikon -->
+                                </div>
+                                <div class="text-end pt-1">
+                                    <p class="text-sm mb-0 text-capitalize" style="font-size: 12px;">Ringkasan</p> 
+                                    <h4 id="summary-title" class="mb-0" style="font-size: 16px; margin-bottom: 3px;">Ringkasan Input</h4> 
+                                </div>
+                            </div>
+                            <div class="card-body p-2" style="padding-top: 3px; height: 100px;"> <!-- Mengurangi padding pada card body -->
+                                <div id="summary-content">
+                                    <p style="font-size: 12px; margin-bottom: 3px;">Tanggal: </p>
+                                    <p style="font-size: 12px; margin-bottom: 3px;">Jam: </p> 
+                                    <p style="font-size: 12px; margin-bottom: 3px;">Hari Giling Ke-: </p> 
+                                    <p style="font-size: 12px; margin-bottom: 3px;">Lokasi: </p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm mt-sm-0 mt-4">
+                        <div class="card mb-2 " style="padding: 5px;width: 200px; margin-bottom: 10px"> <!-- Mengurangi padding pada card -->
+                            <div class="card-header p-2 pt-2 bg-transparent " style="height: 70px;"> <!-- Mengurangi padding pada card header -->
+                                <div class="icon icon-md icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
+                                    <i class="material-icons opacity-10 position-relative ml-">store</i>
+                                    
+                                </div>
+                                <div class="text-end pt-1">
+                                <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">TEBU DIGILING</p>
+                                    <h4 class="mb-0">34,5 TON</h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card mb-2" style="padding: 5px; width: 200px;margin-bottom: 10px;"> <!-- Mengurangi padding pada card -->
+                            <div class="card-header p-2 pt-2 bg-transparent" style="height: 70px;"> <!-- Mengurangi padding pada card header -->
+                                <div class="icon icon-md icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
+                                    <i class="material-icons opacity-10 position-relative ml-">store</i>
+                                    
+                                </div>
+                                <div class="text-end pt-1">
+                                <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">SHS</p>
+                                    <h4 class="mb-0">34,5 TON</h4>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm mt-sm-0 mt-4">
+                        <div class="card mb-2 " style="padding: 5px;width: 200px; margin-bottom: 10px"> <!-- Mengurangi padding pada card -->
+                            <div class="card-header p-2 pt-2 bg-transparent " style="height: 70px;"> <!-- Mengurangi padding pada card header -->
+                                <div class="icon icon-md icon-shape bg-gradient-warning shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
+                                    <i class="material-icons opacity-10 position-relative ml-">store</i>
+                                    
+                                </div>
+                                <div class="text-end pt-1">
+                                <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">MASINIS</p>
+                                    <h4 class="mb-0">ANTON</h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card mb-2" style="padding: 5px; width: 200px;margin-bottom: 10px;"> <!-- Mengurangi padding pada card -->
+                            <div class="card-header p-2 pt-2 bg-transparent" style="height: 70px;"> <!-- Mengurangi padding pada card header -->
+                                <div class="icon icon-md icon-shape bg-gradient-warning shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-fill" viewBox="0 0 25 20">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                  </svg>  
+                                </div>
+                                <div class="text-end pt-1">
+                                <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">CHEMIKER</p>
+                                    <h4 class="mb-0">TONI</h4>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm">
+                        <div class="card mb-2" style="padding: 5px; margin-bottom: 10px;height: 170px;margin-left:auto"> <!-- Mengurangi padding pada card -->
+                        <div class="card-header p-2 pt-1" style="padding-bottom: 3px; height: 60px;"> <!-- ngatur container background hitam transparan -->
+                                <div class="icon icon-md icon-shape bg-gradient-dark shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
+                                  <i class="material-icons opacity-10">leaderboard</i>
+                                </div>
+                                  <div class="text-end pt-1">
+                                      <p class="text-sm mb-0 text-capitalize" style="font-size: 100px;">SHS</p>
+                                      <h4 id="summary-title" class="mb-0" style="font-size: 16px; margin-bottom: 3px;">% TEBU</h4> 
+                                  </div>
+                                </div>
+                                <div class="text-center pt-5">
+                                      <h3 class="mt-0">0,00</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script>
                 function updateJamGiling() {
@@ -794,6 +899,13 @@
             </div>
         </div>
     </div>
+
+    <div class="card" style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
+      <div class="card-body">
+          <h5 class="card-title text-center"> PRODUKSI SHS & PERSANTASE TEBU PER SHIFT </h5>
+          <canvas id="shsChart"></canvas>
+      </div>
+  </div>
 
 
             <script>
@@ -1662,6 +1774,85 @@
           }
       }
   });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Data untuk PRODUKSI SHS dan persentase tebu per shift
+    var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
+    var produksiSHS = [50.0, 75.0, 50.0]; // Ton
+    var persentaseTebu = [20.0, 50.0, 30.0]; // %
+
+    // Membuat grafik PRODUKSI SHS dan persentase tebu
+    var ctxSHS = document.getElementById('shsChart').getContext('2d');
+    var shsChart = new Chart(ctxSHS, {
+        type: 'bar', // Menggunakan jenis grafik batang
+        data: {
+            labels: labelsShift,
+            datasets: [{
+                label: 'Produksi SHS (Ton)',
+                data: produksiSHS,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1,
+                yAxisID: 'SHS',
+                order: 2 // Menampilkan bar chart di depan garis
+            }, {
+                label: 'Persentase Tebu (%)',
+                data: persentaseTebu,
+                type: 'line', // Menggunakan jenis grafik garis
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 2,
+                yAxisID: 'Tebu',
+                order: 1 // Menampilkan garis di belakang bar chart
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Produksi SHS (Ton)',
+                        color: 'rgba(255, 99, 132, 1)',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    },
+                    position: 'left',
+                    id: 'SHS'
+                },
+                y2: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Persentase Tebu (%)',
+                        color: 'rgba(54, 162, 235, 1)',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    },
+                    position: 'right',
+                    id: 'Tebu',
+                    grid: {
+                        display: false
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Shift',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                }
+            }
+        }
+    });
 </script>
 
 
