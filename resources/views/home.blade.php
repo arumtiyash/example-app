@@ -697,6 +697,36 @@
                               <h5 class="card-title text-center">MASAKAN</h5>
                               <canvas id="masakanChart"></canvas>
                           </div>
+<<<<<<< HEAD
+=======
+                      </div>
+
+                      <div class="card" style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
+                          <div class="card-body">
+                              <h5 class="card-title text-center">TETES</h5>
+                              <canvas id="tetesChart"></canvas>
+                          </div>
+                      </div>
+
+                      <div class="card" style="max-width: 600px; margin: auto; background-color: white;">
+                          <div class="card-body">
+                              <h5 class="card-title text-center">TEKANAN UAP</h5>
+                              <canvas id="tekananUapChart"></canvas>
+                          </div>
+                      </div>
+
+                      <div class="card" style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">VACUUM MASAKAN (CmHg)</h5>
+                            <canvas id="vacuumMasakanChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card" style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
+                      <div class="card-body">
+                          <h5 class="card-title text-center"> REKAP SHIFT </h5>
+                          <canvas id="vacuumMasakanChart"></canvas>
+>>>>>>> 788e4f5f0e631d3f0df9ce15b32b7688e0dde285
                       </div>
 
                       <div class="card" style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
