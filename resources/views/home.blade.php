@@ -857,6 +857,7 @@
                       </ul>
                   </div>
               </div>
+<<<<<<< HEAD
 
               <div class="col-md-6">
                       <div class="chart-container">
@@ -904,11 +905,15 @@
           
 
 
+=======
+>>>>>>> 338f0825b05db75f199e2d6322870eb66ddebdc4
                 </div>
             </div>
         </div>
     </div>
 
+
+    
 
 
 
