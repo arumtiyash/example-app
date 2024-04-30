@@ -829,7 +829,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="summary-card p-3">
-                            <h4 class="card-title text-center">Summary</h4>
+                            <h4 class="card-title text-center">Summary Tebu Digiling</h4>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Total Tebu Digiling: 350 Ton</li>
                                 <li class="list-group-item">Rata-rata Tebu per Jam: 58.3 Ton</li>
@@ -838,12 +838,25 @@
                         </div>
                     </div>
 
-                    <div class="card" style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
-                      <div class="card-body">
-                          <h5 class="card-title text-center">PRODUKSI SHS & PERSANTASE TEBU PER SHIFT</h5>
-                          <canvas id="shsChart"></canvas>
+                    <div class="col-md-6">
+                      <div class="chart-container">
+                          <h3 class="chart-title text-center">PRODUKSI SHS</h3>
+                          <canvas id="produksishsChart" width="400" height="200"></canvas>
                       </div>
                   </div>
+
+              <!-- Tambahkan bagian summary untuk PRODUKSI SHS & PERSANTASE TEBU PER SHIFT di sini -->
+                <div class="col-md-6">
+                  <div class="summary-card p-3">
+                      <h4 class="card-title text-center">Summary Produksi SHS</h4>
+                      <ul class="list-group list-group-flush">
+                          <!-- Isi dengan informasi summary yang sesuai -->
+                          <li class="list-group-item">Total Produksi SHS: 250 Ton</li>
+                          <li class="list-group-item">Persentase Tebu per Shift: 65%</li>
+                          <!-- Tambahkan item summary lainnya sesuai kebutuhan -->
+                      </ul>
+                  </div>
+              </div>
 
                 </div>
             </div>
@@ -1799,6 +1812,79 @@
         }
     });
 </script>
+
+<script>
+  // Data untuk PRODUKSI SHS
+  var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
+  var produksiSHS = [250, 300, 270]; // Ton
+  var produksiPerJam = [80, 90, 85]; // Ton
+  var persentaseSHS = [65, 70, 68]; // Persentase (%)
+
+  // Membuat grafik PRODUKSI SHS
+  var ctxProduksiSHS = document.getElementById('produksishsChart').getContext('2d');
+  var produksiSHSChart = new Chart(ctxProduksiSHS, {
+      type: 'bar',
+      data: {
+          labels: labelsShift,
+          datasets: [{
+              label: 'Produksi SHS (Ton)',
+              data: produksiSHS,
+              backgroundColor: 'rgba(255, 99, 132, 0.5)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+          }, {
+              label: 'Produksi SHS per Jam (s.d Ton)',
+              data: produksiPerJam,
+              backgroundColor: 'rgba(255, 205, 86, 0.5)',
+              borderColor: 'rgba(255, 205, 86, 1)',
+              borderWidth: 1
+          }, {
+              label: 'Persentase Tebu (%)',
+              data: persentaseSHS,
+              backgroundColor: 'rgba(54, 162, 235, 0.5)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  title: {
+                      display: true,
+                      text: 'Produksi SHS (Ton) / Produksi SHS per Jam (s.d Ton) / Persentase Tebu (%)'
+                  }
+              },
+              x: {
+                  title: {
+                      display: true,
+                      text: 'Shift'
+                  }
+              }
+          }
+      }
+  });
+
+  // Update bagian summary untuk PRODUKSI SHS
+  var summaryProduksiSHS = document.querySelector('#summaryProduksiSHS');
+    summaryProduksiSHS.innerHTML = `
+        <h4 class="card-title text-center">Summary Produksi SHS</h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Total Produksi SHS: ${produksiSHS.reduce((a, b) => a + b, 0)} Ton</li>
+            <li class="list-group-item">Produksi SHS per Jam (s.d Ton):
+                <ul>
+                    <li>Shift PAGI: ${produksiPerJam[0]} Ton</li>
+                    <li>Shift SIANG: ${produksiPerJam[1]} Ton</li>
+                    <li>Shift MALAM: ${produksiPerJam[2]} Ton</li>
+                </ul>
+            </li>
+            <li class="list-group-item">Rata-rata Persentase Tebu per Shift: ${persentaseSHS.reduce((a, b) => a + b, 0) / persentaseSHS.length}%</li>
+            <!-- Tambahkan item summary lainnya sesuai kebutuhan -->
+        </ul>
+    `;
+</script>
+
+
 
 
 
