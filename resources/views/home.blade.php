@@ -813,8 +813,6 @@
             <title>PLOEG Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container py-5">
         <div class="card">
             <div class="card-header bg-primary text-white text-center">
                 <h2 class="font-weight-bold mb-0">PLOEG</h2>
@@ -828,15 +826,17 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="summary-card p-3">
-                            <h4 class="card-title text-center">Summary Tebu Digiling</h4>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Total Tebu Digiling: 350 Ton</li>
-                                <li class="list-group-item">Rata-rata Tebu per Jam: 58.3 Ton</li>
-                                <li class="list-group-item">Shift Terakhir: Siang</li>
-                            </ul>
-                        </div>
-                    </div>
+                      <div class="summary-card p-3">
+                          <h4 class="card-title text-center">Summary Tebu Digiling</h4>
+                          <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Total Tebu Digiling: 350 Ton</li>
+                              <li class="list-group-item">Rata-rata Tebu per Jam: 58.3 Ton</li>
+                              <li class="list-group-item">Shift Terakhir: Siang</li>
+                          </ul>
+                      </div>
+                  </div>
+                  
+                  
 
                     <div class="col-md-6">
                       <div class="chart-container">
@@ -863,20 +863,12 @@
     </div>
   
     
-
-    <title>PLOEG 2 Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-      .card {
-          margin-top: 5px; /* Sesuaikan jarak yang diinginkan */
-      }
       .card-header {
           font-weight: bold; /* Membuat judul tebal */
       }
   </style>
-</head>
-<body>
-    <div class="container py-5">
         <div class="card">
             <div class="container-fluid">
                 <div class="row">
