@@ -758,6 +758,7 @@
                                 <canvas id="vacuumMasakanChart"></canvas>
                             </div>
                         </div>
+<<<<<<< HEAD
 
                         <div class="card"
                             style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
@@ -767,9 +768,27 @@
                             </div>
                         </div>
 
+=======
+>>>>>>> c1a1294cbb5a6c5529a6ac2ef75cb468440acd34
                     </div>
                 </div>
             </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <div class="container">
+              <div class="card">
+                  <h2 class="font-weight-bold mb-3 text-center"
+                      style="font-size: 23px; font-family: 'Montserrat', sans-serif; color: #333;"> PLOEG </h2>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="chart-container card-body">
+                              <h3 class="chart-title">REKAP SHIFT</h3>
+                              <canvas id="rekapshiftChart" width="400" height="200"></canvas>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
             <script>
                 // Data grafik Tebu Digiling per Jam
@@ -1542,6 +1561,110 @@
                     }
                 });
             </script>
+<<<<<<< HEAD
+=======
+            <script>
+              // Data untuk PLOEG JAM TEBU DIGILING
+              var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+              var tebuDigilingPerJam = [50.0, 75.0, 50.0, 175.0]; // Ton
+              var tebuDigilingTotal = [50.0, 125.0, 175.0, 350.0]; // Ton
+          
+              // Membuat grafik PLOEG JAM TEBU DIGILING
+              var ctxJamTebuDigiling = document.getElementById('jamTebuDigilingChart').getContext('2d');
+              var jamTebuDigilingChart = new Chart(ctxJamTebuDigiling, {
+                  type: 'bar',
+                  data: {
+                      labels: labelsShift,
+                      datasets: [
+                        {
+                          label: 'Tebu Digiling per Jam (Ton)',
+                          data: tebuDigilingPerJam,
+                          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                          borderColor: 'rgba(255, 99, 132, 1)',
+                          borderWidth: 1
+                        },
+                        {
+                          label: 'Total Tebu Digiling (Ton)',
+                          data: tebuDigilingTotal,
+                          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                          borderColor: 'rgba(54, 162, 235, 1)',
+                          borderWidth: 1
+                        }
+                      ]
+                  },
+                  options: {
+                      scales: {
+                          y: {
+                              beginAtZero: true,
+                              title: {
+                                  display: true,
+                                  text: 'Tebu Digiling (Ton)'
+                              }
+                          },
+                          x: {
+                              title: {
+                                  display: true,
+                                  text: 'Shift'
+                              }
+                          }
+                      }
+                  }
+              });
+          </script>
+
+
+           
+<script>
+  // Data untuk PLOEG JAM TEBU DIGILING
+  var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+  var tebuDigilingPerJam = [50.0, 75.0, 50.0, 0.0]; // Ton
+  var tebuDigilingTotal = [50.0, 125.0, 175.0, 350.0]; // Ton
+
+  // Membuat grafik PLOEG JAM TEBU DIGILING
+  var ctxRekapShift = document.getElementById('rekapshiftChart').getContext('2d');
+  var rekapShiftChart = new Chart(ctxRekapShift, {
+      type: 'bar',
+      data: {
+          labels: labelsShift,
+          datasets: [{
+              label: 'Tebu Digiling per Jam (Ton)',
+              data: tebuDigilingPerJam,
+              backgroundColor: 'rgba(255, 99, 132, 0.5)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+          }, {
+              label: 'Total Tebu Digiling (Ton)',
+              data: tebuDigilingTotal,
+              backgroundColor: 'rgba(54, 162, 235, 0.5)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  title: {
+                      display: true,
+                      text: 'Tebu Digiling (Ton)'
+                  }
+              },
+              x: {
+                  title: {
+                      display: true,
+                      text: 'Shift'
+                  }
+              }
+          }
+      }
+  });
+</script>
+
+
+          
+          
+
+>>>>>>> c1a1294cbb5a6c5529a6ac2ef75cb468440acd34
 
         </body>
 
