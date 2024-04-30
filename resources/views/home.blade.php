@@ -570,65 +570,7 @@
                 setInterval(updateJamGiling, 1000);
             </script>
 
-            <div class="row">
-                <div class="col-lg-5 col-sm-5">
-                    <div class="card mb-2" style="padding: 5px; margin-bottom: 10px;">
-                        <!-- Mengurangi padding pada card -->
-                        <div class="card-header p-2 pt-1" style="padding-bottom: 3px; height: 60px;">
-                            <!-- Mengurangi padding pada card header -->
-                            <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n2 position-absolute"
-                                style="padding: 3px;"> <!-- Mengurangi padding pada ikon -->
-                                <i class="material-icons opacity-10" style="font-size: 10px;">weekend</i>
-                                <!-- Ubah ukuran ikon -->
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize" style="font-size: 12px;">Ringkasan</p>
-                                <h4 id="summary-title" class="mb-0" style="font-size: 16px; margin-bottom: 3px;">
-                                    Ringkasan Input</h4>
-                            </div>
-                        </div>
-                        <div class="card-body p-2" style="padding-top: 3px; height: 100px;">
-                            <!-- Mengurangi padding pada card body -->
-                            <div id="summary-content">
-                                <p style="font-size: 12px; margin-bottom: 3px;">Tanggal: </p>
-                                <p style="font-size: 12px; margin-bottom: 3px;">Jam: </p>
-                                <p style="font-size: 12px; margin-bottom: 3px;">Hari Giling Ke-: </p>
-                                <p style="font-size: 12px; margin-bottom: 3px;">Lokasi: </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-sm-5 mt-sm-0 mt-4">
-                    <div class="card mb-2" style="padding: 5px; margin-bottom: 10px;">
-                        <!-- Mengurangi padding pada card -->
-                        <div class="card-header p-2 pt-1 bg-transparent" style="height: 60px;">
-                            <!-- Mengurangi padding pada card header -->
-                            <div
-                                class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">store</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">TEBU DIGILING</p>
-                                <h4 class="mb-0">34,5 TON</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-2" style="padding: 5px; margin-bottom: 10px;">
-                        <!-- Mengurangi padding pada card -->
-                        <div class="card-header p-2 pt-1 bg-transparent" style="height: 60px;">
-                            <!-- Mengurangi padding pada card header -->
-                            <div
-                                class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">store</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">SHS</p>
-                                <h4 class="mb-0">32,8 ton</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
