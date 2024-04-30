@@ -763,6 +763,7 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
             <table>
                 <thead>
                     <tr>
@@ -786,6 +787,42 @@
                     <!-- Tambahkan baris data lain sesuai kebutuhan -->
                 </tbody>
             </table>
+=======
+                    <div class="card" style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
+                      <div class="card-body">
+                          <h5 class="card-title text-center"> REKAP SHIFT </h5>
+                          <canvas id="vacuumMasakanChart"></canvas>
+                      </div>
+                  </div>
+
+                      </div>
+                  </div>
+              </div>
+                      
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Jam</th>
+                          <th>Tebu Digiling per Jam (Ton)</th>
+                          <th>Tebu Digiling s.d (Ton)</th>
+                          <th>Produksi SHS per Jam (Ton)</th>
+                          <th>Produksi SHS s.d (Ton)</th>
+                          <th>% Tebu</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>6</td>
+                          <td>7.0</td>
+                          <td>4.0</td>
+                          <td>2.0</td>
+                          <td>6.0</td>
+                          <td>6.00</td>
+                      </tr>
+                      <!-- Tambahkan baris data lain sesuai kebutuhan -->
+                  </tbody>
+              </table>
+>>>>>>> a76383bdac73756363ae4798cbded740e3574d68
 
             <script>
                 // Data grafik Tebu Digiling per Jam
@@ -1557,6 +1594,7 @@
                 });
             </script>
 
+<<<<<<< HEAD
             <script>
                 // Data untuk JAM TEBU DIGILING
                 var labelsJamTebu = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
@@ -1595,6 +1633,60 @@
                     }
                 });
             </script>
+=======
+<script>
+  // Data dummy untuk grafik Vacuum Masakan (CmHg)
+  var labelsVacuumMasakan = [
+      '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', 
+      '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM', 
+      '10 PM', '11 PM', '12 AM', '1 AM', '2 AM', '3 AM', '4 AM', '5 AM'
+  ];
+  var vacuumMasakanData = [
+      5, 4.8, 4.9, 4.7, 5.1, 5.2, 5.3, 5.1, 
+      5.4, 5.2, 5.1, 5.3, 5.2, 5.1, 5, 5.2, 
+      5.1, 5.5, 5.8, 5.7, 5.6, 5.5, 5.3, 5.2
+  ]; // Data dalam satuan ton
+
+  // Membuat grafik Vacuum Masakan (CmHg)
+  var ctxVacuumMasakan = document.getElementById('vacuumMasakanChart').getContext('2d');
+  var vacuumMasakanChart = new Chart(ctxVacuumMasakan, {
+      type: 'line',
+      data: {
+          labels: labelsVacuumMasakan,
+          datasets: [{
+              label: 'Vacuum Masakan (CmHg)',
+              data: vacuumMasakanData,
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 2,
+              pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+              pointRadius: 5,
+              pointHoverRadius: 8,
+              fill: true,
+              tension: 0.4,
+              stepped: false
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: false,
+                  scaleLabel: {
+                      display: true,
+                      labelString: 'Vacuum (ton)'
+                  }
+              },
+              x: {
+                  scaleLabel: {
+                      display: true,
+                      labelString: 'Jam'
+                  }
+              }
+          }
+      }
+  });
+</script>
+>>>>>>> a76383bdac73756363ae4798cbded740e3574d68
 
         </body>
 
