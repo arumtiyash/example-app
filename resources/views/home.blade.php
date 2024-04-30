@@ -853,6 +853,9 @@
                       </ul>
                   </div>
               </div>
+
+              
+
                 </div>
             </div>
     </div>
@@ -884,6 +887,16 @@
                       </div>
                   </div>
               </div>
+
+              <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Imbibisi</div>
+                    <div class="card-body">
+                        <canvas id="imbibisiChart"></canvas>
+                    </div>
+                </div>
+            </div> 
+
               
             </div>
         </div>
@@ -2034,6 +2047,116 @@
                     title: {
                         display: true,
                         text: 'Persentase NM Tebu'
+                    }
+                }
+            },
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 10,
+                    top: 10,
+                    bottom: 10
+                }
+            },
+            responsive: true
+        }
+    });
+</script>
+
+<script>
+    // Data untuk ANALISIS NM
+    var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+    var tonData = [45.0, 30.0, 25.0, 100.0];
+    var persentaseTebuData = [30.0, 40.0, 30.0, null]; // Tambahkan null untuk label '1 HARI'
+
+    // Membuat grafik Flow Imbibisi
+    var ctxImbibisi = document.getElementById('imbibisiChart').getContext('2d');
+    var imbibisiChart = new Chart(ctxImbibisi, {
+        type: 'bar', // Jenis grafik
+        data: {
+            labels: labelsShift,
+            datasets: [{
+                label: 'Ton',
+                data: tonData,
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }, {
+                label: '% Tebu',
+                data: persentaseTebuData,
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom' // Tampilkan legend di bagian bawah
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Ton / % Tebu'
+                    }
+                }
+            },
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 10,
+                    top: 10,
+                    bottom: 10
+                }
+            },
+            responsive: true
+        }
+    });
+</script>
+
+<script>
+    // Data untuk ANALISIS NM
+    var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+    var tonData = [45.0, 30.0, 25.0, 100.0];
+    var persentaseTebuData = [30.0, 40.0, 30.0, null]; // Tambahkan null untuk label '1 HARI'
+
+    // Membuat grafik Flow Imbibisi
+    var ctxImbibisi = document.getElementById('imbibisiChart').getContext('2d');
+    var imbibisiChart = new Chart(ctxImbibisi, {
+        type: 'bar', // Jenis grafik
+        data: {
+            labels: labelsShift,
+            datasets: [{
+                label: 'Ton',
+                data: tonData,
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }, {
+                label: '% Tebu',
+                data: persentaseTebuData,
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom' // Tampilkan legend di bagian bawah
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Ton / % Tebu'
                     }
                 }
             },
