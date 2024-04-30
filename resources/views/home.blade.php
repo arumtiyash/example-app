@@ -758,18 +758,7 @@
                                 <canvas id="vacuumMasakanChart"></canvas>
                             </div>
                         </div>
-<<<<<<< HEAD
 
-                        <div class="card"
-                            style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
-                            <div class="card-body">
-                                <h5 class="card-title text-center"> REKAP SHIFT </h5>
-                                <canvas id="vacuumMasakanChart"></canvas>
-                            </div>
-                        </div>
-
-=======
->>>>>>> c1a1294cbb5a6c5529a6ac2ef75cb468440acd34
                     </div>
                 </div>
             </div>
@@ -1561,8 +1550,6 @@
                     }
                 });
             </script>
-<<<<<<< HEAD
-=======
             <script>
               // Data untuk PLOEG JAM TEBU DIGILING
               var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
@@ -1661,10 +1648,6 @@
 </script>
 
 
-          
-          
-
->>>>>>> c1a1294cbb5a6c5529a6ac2ef75cb468440acd34
 
         </body>
 
