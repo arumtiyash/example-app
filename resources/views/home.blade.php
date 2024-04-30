@@ -2006,45 +2006,60 @@
 </script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  // Data untuk ANALISIS NM
-  var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
-  var nmPersentaseTebu = [55.0, 20.0, 25.0]; // Persentase NM Tebu
+    // Data untuk ANALISIS NM
+    var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
+    var nmPersentaseTebu = [55.0, 20.0, 25.0]; // Persentase NM Tebu
 
-  // Membuat grafik ANALISIS NM
-  var ctxAnalisaNM = document.getElementById('analisaNMChart').getContext('2d');
-  var analisaNMChart = new Chart(ctxAnalisaNM, {
-      type: 'pie',
-      data: {
-          labels: labelsShift,
-          datasets: [{
-              label: 'Persentase NM Tebu',
-              data: nmPersentaseTebu,
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.5)',
-                  'rgba(54, 162, 235, 0.5)',
-                  'rgba(255, 205, 86, 0.5)'
-              ],
-              borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 205, 86, 1)'
-              ],
-              borderWidth: 1
-          }]
-      },
-      options: {
-          scales: {
-              y: {
-                  beginAtZero: true,
-                  title: {
-                      display: true,
-                      text: 'Persentase NM Tebu'
-                  }
-              }
-          }
-      }
-  });
+    // Membuat grafik ANALISIS NM
+    var ctxAnalisaNM = document.getElementById('analisaNMChart').getContext('2d');
+    var analisaNMChart = new Chart(ctxAnalisaNM, {
+        type: 'bar', // Ubah menjadi 'bar' untuk bar chart atau 'line' untuk line chart
+        data: {
+            labels: labelsShift,
+            datasets: [{
+                label: 'Persentase NM Tebu',
+                data: nmPersentaseTebu,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 205, 86, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 205, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false // Menonaktifkan legend
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Persentase NM Tebu'
+                    }
+                }
+            },
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 10,
+                    top: 10,
+                    bottom: 10
+                }
+            },
+            responsive: true
+        }
+    });
 </script>
 
         </body>
