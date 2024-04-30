@@ -861,7 +861,10 @@
     </div>
     </div>
   
+
     
+    <!-- container PLOEG 2 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
       .card-header {
@@ -875,7 +878,7 @@
                     <div class="card">
                         <div class="card-header">Analisa GKP</div>
                         <div class="card-body">
-                            <canvas id="analisaGKPChart"></canvas>
+                            <canvas id="gkpSummaryChart"></canvas>
                         </div>
                     </div>
                 </div>                
@@ -883,7 +886,7 @@
                   <div class="card">
                       <div class="card-header">NM % TEBU</div>
                       <div class="card-body">
-                          <canvas id="analisaNMChart"></canvas>
+                          <canvas id="nmSummaryChart"></canvas>
                       </div>
                   </div>
               </div>
@@ -892,7 +895,7 @@
                 <div class="card">
                     <div class="card-header">Imbibisi</div>
                     <div class="card-body">
-                        <canvas id="imbibisiChart"></canvas>
+                        <canvas id="imbibisiSummaryChart"></canvas>
                     </div>
                 </div>
             </div> 
@@ -901,11 +904,50 @@
                 <div class="card">
                     <div class="card-header">NPP</div>
                     <div class="card-body">
-                        <canvas id="nppChart"></canvas>
+                        <canvas id="nppSummaryChart"></canvas>
                     </div>
                 </div>
             </div> 
+
+          <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Brix Nira Gil II & Brix Gil Akhir</div>
+                <div class="card-body">
+                    <canvas id="brixSummaryChart"></canvas>
+                </div>
+            </div>
+        </div> 
               
+        <div class="col-md-6">
+          <div class="card">
+              <div class="card-header">Ampas</div>
+              <div class="card-body">
+                  <canvas id="ampasSummaryChart"></canvas>
+              </div>
+          </div>
+      </div> 
+
+      <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">TURBIDITY
+              (ppm) dan	% POL BLT</div>
+            <div class="card-body">
+                <canvas id="turbiditypolSummaryChart"></canvas>
+            </div>
+        </div>
+    </div> 
+
+      <div class="col-md-6">
+        <div class="card">
+            <div class="card-header"> Be NK & Vacuum BP AKHIR</div>
+            <div class="card-body">
+                <canvas id="benkvacuumSummaryChart"></canvas>
+            </div>
+        </div>
+    </div> 
+
+
+
             </div>
         </div>
     </div>
@@ -1942,17 +1984,16 @@
     `;
 </script>
 
-
 <script>
   // Data untuk Analisa GKP
-  var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
-  var icumsa = [30, 25, 35]; // Nilai ICUMSA
-  var bjb = [25, 30, 20]; // Nilai BJB
-  var kadarAir = [10, 25, 30]; // Kadar air
+  var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+  var icumsa = [30, 25, 35, 90]; // Nilai ICUMSA untuk "1 HARI"
+  var bjb = [25, 30, 20, 75]; // Nilai BJB untuk "1 HARI"
+  var kadarAir = [10, 25, 30, 15]; // Kadar air untuk "1 HARI"
 
   // Membuat grafik Analisa GKP
-  var ctxAnalisaGKP = document.getElementById('analisaGKPChart').getContext('2d');
-  var analisaGKPChart = new Chart(ctxAnalisaGKP, {
+  var ctxAnalisaGKP = document.getElementById('gkpSummaryChart').getContext('2d');
+  var gkpSummaryChart = new Chart(ctxAnalisaGKP, {
       type: 'bar',
       data: {
           labels: labelsShift,
@@ -2014,242 +2055,390 @@
   });
 </script>
 
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // Data untuk ANALISIS NM
-    var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
-    var nmPersentaseTebu = [55.0, 20.0, 25.0]; // Persentase NM Tebu
+  // Data untuk NM % Tebu
+  var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+  var nmData = [25.0, 30.0, 25.0, 80.0]; // Persentase NM % Tebu
 
-    // Membuat grafik ANALISIS NM
-    var ctxAnalisaNM = document.getElementById('analisaNMChart').getContext('2d');
-    var analisaNMChart = new Chart(ctxAnalisaNM, {
-        type: 'bar', // Ubah menjadi 'bar' untuk bar chart atau 'line' untuk line chart
-        data: {
-            labels: labelsShift,
-            datasets: [{
-                label: 'Persentase NM Tebu',
-                data: nmPersentaseTebu,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(54, 162, 235, 0.5)',
-                    'rgba(255, 205, 86, 0.5)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 205, 86, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            plugins: {
-                legend: {
-                    display: false // Menonaktifkan legend
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Persentase NM Tebu'
-                    }
-                }
-            },
-            layout: {
-                padding: {
-                    left: 10,
-                    right: 10,
-                    top: 10,
-                    bottom: 10
-                }
-            },
-            responsive: true
+  // Membuat grafik NM % Tebu
+  var ctxNM = document.getElementById('nmSummaryChart').getContext('2d');
+  var nmChart = new Chart(ctxNM, {
+    type: 'bar',
+    data: {
+      labels: labelsShift,
+      datasets: [{
+        label: 'NM % Tebu',
+        data: nmData,
+        backgroundColor: 'rgba(255, 159, 64, 0.5)',
+        borderColor: 'rgba(255, 159, 64, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false
         }
-    });
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'NM % Tebu'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Shift'
+          }
+        }
+      }
+    }
+  });
+</script>
+
+
+<script>
+  // Data untuk ANALISIS imbibisi
+  var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+  var tonData = [45.0, 30.0, 25.0, 100.0];
+  var persentaseTebuData = [30.0, 40.0, 30.0, null]; // Tambahkan null untuk label '1 HARI'
+
+  // Membuat grafik Flow Imbibisi
+  var ctxImbibisi = document.getElementById('imbibisiSummaryChart').getContext('2d');
+  var imbibisiChart = new Chart(ctxImbibisi, {
+      type: 'bar', // Jenis grafik
+      data: {
+          labels: labelsShift,
+          datasets: [{
+              label: 'Ton',
+              data: tonData,
+              backgroundColor: 'rgba(255, 99, 132, 0.5)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+          }, {
+              label: '% Tebu',
+              data: persentaseTebuData,
+              backgroundColor: 'rgba(54, 162, 235, 0.5)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+          }]
+      },
+      options: {
+          plugins: {
+              legend: {
+                  display: true,
+                  position: 'bottom' // Tampilkan legend di bagian bawah
+              }
+          },
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  title: {
+                      display: true,
+                      text: 'Ton / % Tebu'
+                  }
+              }
+          },
+          layout: {
+              padding: {
+                  left: 10,
+                  right: 10,
+                  top: 10,
+                  bottom: 10
+              }
+          },
+          responsive: true
+      }
+  });
+</script>
+
+
+<script>
+  // Data untuk grafik NPP
+  var labelsShiftNPP = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+  var brixData = [40.0, 30.0, 20.0, 90.0];
+  var polData = [25.0, 30.0, 25.0, 80.0];
+  var hkData = [30.0, 45.0, 20.0, 95.0];
+
+  // Membuat grafik NPP
+  var ctxNPP = document.getElementById('nppSummaryChart').getContext('2d'); // Menggunakan id nppSummaryChart
+  var nppChart = new Chart(ctxNPP, {
+      type: 'line', // Jenis grafik
+      data: {
+          labels: labelsShiftNPP,
+          datasets: [{
+              label: 'Brix',
+              data: brixData,
+              fill: false,
+              borderColor: 'rgba(255, 99, 132, 1)', // Warna garis untuk Brix
+              borderWidth: 2,
+              pointRadius: 5, // Ukuran titik
+              pointBackgroundColor: 'rgba(255, 99, 132, 1)', // Warna titik
+              pointBorderColor: 'rgba(255, 99, 132, 1)' // Warna border titik
+          }, {
+              label: 'Pol',
+              data: polData,
+              fill: false,
+              borderColor: 'rgba(54, 162, 235, 1)', // Warna garis untuk Pol
+              borderWidth: 2,
+              pointRadius: 5, // Ukuran titik
+              pointBackgroundColor: 'rgba(54, 162, 235, 1)', // Warna titik
+              pointBorderColor: 'rgba(54, 162, 235, 1)' // Warna border titik
+          }, {
+              label: 'HK',
+              data: hkData,
+              fill: false,
+              borderColor: 'rgba(255, 205, 86, 1)', // Warna garis untuk HK
+              borderWidth: 2,
+              pointRadius: 5, // Ukuran titik
+              pointBackgroundColor: 'rgba(255, 205, 86, 1)', // Warna titik
+              pointBorderColor: 'rgba(255, 205, 86, 1)' // Warna border titik
+          }]
+      },
+      options: {
+          plugins: {
+              legend: {
+                  display: true,
+                  position: 'bottom' // Tampilkan legend di bagian bawah
+              }
+          },
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  title: {
+                      display: true,
+                      text: 'Nilai'
+                  }
+              }
+          },
+          layout: {
+              padding: {
+                  left: 10,
+                  right: 10,
+                  top: 10,
+                  bottom: 10
+              }
+          },
+          responsive: true
+      }
+  });
+</script>
+
+
+<script>
+  // Data untuk Brix Nira Gil II & Brix Gil Akhir
+  var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+  var brixNiraGilII = [12, 10, 14, 30]; // Contoh data Brix Nira Gil II (satuannya bebas) untuk 1 HARI
+  var brixGilAkhir = [15, 13, 16, 35]; // Contoh data Brix Gil Akhir (satuannya bebas) untuk 1 HARI
+
+  // Membuat grafik Brix Nira Gil II & Brix Gil Akhir
+  var ctxBrix = document.getElementById('brixSummaryChart').getContext('2d');
+  var brixChart = new Chart(ctxBrix, {
+    type: 'bar',
+    data: {
+      labels: labelsShift,
+      datasets: [{
+        label: 'Brix Nira Gil II',
+        data: brixNiraGilII,
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1,
+        yAxisID: 'Brix',
+        order: 2
+      }, {
+        label: 'Brix Gil Akhir',
+        data: brixGilAkhir,
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1,
+        yAxisID: 'Brix',
+        order: 1
+      }]
+    },
+    options: {
+      scales: {
+        Brix: {
+          type: 'linear',
+          position: 'left',
+          title: {
+            display: true,
+            text: 'Brix'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Shift'
+          }
+        }
+      }
+    }
+  });
+</script>
+
+
+<script>
+  // Data untuk Ampas
+  var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+  var pi = [10, 15, 20, 45]; // Nilai PI (Pulp Index) untuk 1 HARI
+  var pol = [8, 9, 10, 27]; // Nilai % Pol untuk 1 HARI
+  var zk = [5, 6, 7, 18]; // Nilai ZK untuk 1 HARI
+
+  // Membuat grafik visualisasi untuk Ampas
+  var ctxAmpasSummary = document.getElementById('ampasSummaryChart').getContext('2d');
+  var ampasSummaryChart = new Chart(ctxAmpasSummary, {
+      type: 'line',
+      data: {
+          labels: labelsShift,
+          datasets: [{
+              label: 'PI (Pulp Index)',
+              data: pi,
+              borderColor: 'rgba(255, 99, 132, 1)',
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderWidth: 2,
+              pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+              pointRadius: 5,
+              pointHoverRadius: 8
+          }, {
+              label: '% Pol',
+              data: pol,
+              borderColor: 'rgba(54, 162, 235, 1)',
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderWidth: 2,
+              pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+              pointRadius: 5,
+              pointHoverRadius: 8
+          }, {
+              label: 'ZK',
+              data: zk,
+              borderColor: 'rgba(75, 192, 192, 1)',
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              borderWidth: 2,
+              pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+              pointRadius: 5,
+              pointHoverRadius: 8
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: false,
+                  title: {
+                      display: true,
+                      text: 'Nilai'
+                  }
+              },
+              x: {
+                  title: {
+                      display: true,
+                      text: 'Shift'
+                  }
+              }
+          }
+      }
+  });
+</script>
+
+
+<script>
+  // Data dummy untuk turbidity dan % Pol BLT
+  var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+  var turbidityData = [50, 60, 70, 180]; // Contoh data turbidity (ppm)
+  var polBLTData = [12, 13, 14, 39]; // Contoh data % Pol BLT
+
+  // Membuat grafik visualisasi untuk Turbidity dan % Pol BLT
+  var ctxTurbidityPolSummary = document.getElementById('turbiditypolSummaryChart').getContext('2d');
+  var turbidityPolSummaryChart = new Chart(ctxTurbidityPolSummary, {
+      type: 'bar',
+      data: {
+          labels: labelsShift,
+          datasets: [{
+              label: 'Turbidity (ppm)',
+              data: turbidityData,
+              backgroundColor: 'rgba(255, 99, 132, 0.5)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+          }, {
+              label: '% Pol BLT',
+              data: polBLTData,
+              backgroundColor: 'rgba(54, 162, 235, 0.5)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  title: {
+                      display: true,
+                      text: 'Nilai'
+                  }
+              },
+              x: {
+                  title: {
+                      display: true,
+                      text: 'Shift'
+                  }
+              }
+          }
+      }
+  });
 </script>
 
 <script>
-    // Data untuk ANALISIS NM
-    var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
-    var tonData = [45.0, 30.0, 25.0, 100.0];
-    var persentaseTebuData = [30.0, 40.0, 30.0, null]; // Tambahkan null untuk label '1 HARI'
+  // Data untuk Be NK & Vacuum BP AKHIR
+  var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
+  var beNkData = [0.5, 0.6, 0.7, 0.9]; // Nilai Be NK (satuan: mmHg)
+  var vacuumBpData = [0.8, 0.7, 0.6, 0.5]; // Nilai Vacuum BP AKHIR (satuan: bar)
 
-    // Membuat grafik Flow Imbibisi
-    var ctxImbibisi = document.getElementById('imbibisiChart').getContext('2d');
-    var imbibisiChart = new Chart(ctxImbibisi, {
-        type: 'bar', // Jenis grafik
-        data: {
-            labels: labelsShift,
-            datasets: [{
-                label: 'Ton',
-                data: tonData,
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
-            }, {
-                label: '% Tebu',
-                data: persentaseTebuData,
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
+  // Membuat grafik Be NK & Vacuum BP AKHIR
+  var ctxBenkVacuum = document.getElementById('benkvacuumSummaryChart').getContext('2d');
+  var benkVacuumChart = new Chart(ctxBenkVacuum, {
+    type: 'line',
+    data: {
+      labels: labelsShift,
+      datasets: [{
+        label: 'Be NK',
+        data: beNkData,
+        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+        pointRadius: 5,
+        pointHoverRadius: 8
+      }, {
+        label: 'Vacuum BP AKHIR',
+        data: vacuumBpData,
+        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+        pointRadius: 5,
+        pointHoverRadius: 8
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: false,
+          title: {
+            display: true,
+            text: 'Nilai'
+          }
         },
-        options: {
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'bottom' // Tampilkan legend di bagian bawah
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Ton / % Tebu'
-                    }
-                }
-            },
-            layout: {
-                padding: {
-                    left: 10,
-                    right: 10,
-                    top: 10,
-                    bottom: 10
-                }
-            },
-            responsive: true
+        x: {
+          title: {
+            display: true,
+            text: 'Shift'
+          }
         }
-    });
-</script>
-
-<script>
-    // Data untuk ANALISIS NM
-    var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
-    var tonData = [45.0, 30.0, 25.0, 100.0];
-    var persentaseTebuData = [30.0, 40.0, 30.0, null]; // Tambahkan null untuk label '1 HARI'
-
-    // Membuat grafik Flow Imbibisi
-    var ctxImbibisi = document.getElementById('imbibisiChart').getContext('2d');
-    var imbibisiChart = new Chart(ctxImbibisi, {
-        type: 'bar', // Jenis grafik
-        data: {
-            labels: labelsShift,
-            datasets: [{
-                label: 'Ton',
-                data: tonData,
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
-            }, {
-                label: '% Tebu',
-                data: persentaseTebuData,
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'bottom' // Tampilkan legend di bagian bawah
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Ton / % Tebu'
-                    }
-                }
-            },
-            layout: {
-                padding: {
-                    left: 10,
-                    right: 10,
-                    top: 10,
-                    bottom: 10
-                }
-            },
-            responsive: true
-        }
-    });
-</script>
-
-<script>
-    // Data untuk grafik NPP
-    var labelsShiftNPP = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
-    var brixData = [40.0, 30.0, 20.0, 90.0];
-    var polData = [25.0, 30.0, 25.0, 80.0];
-    var hkData = [30.0, 45.0, 20.0, 95.0];
-
-    // Membuat grafik NPP
-    var ctxNPP = document.getElementById('nppChart').getContext('2d');
-    var nppChart = new Chart(ctxNPP, {
-        type: 'line', // Jenis grafik
-        data: {
-            labels: labelsShiftNPP,
-            datasets: [{
-                label: 'Brix',
-                data: brixData,
-                fill: false,
-                borderColor: 'rgba(255, 99, 132, 1)', // Warna garis untuk Brix
-                borderWidth: 2,
-                pointRadius: 5, // Ukuran titik
-                pointBackgroundColor: 'rgba(255, 99, 132, 1)', // Warna titik
-                pointBorderColor: 'rgba(255, 99, 132, 1)' // Warna border titik
-            }, {
-                label: 'Pol',
-                data: polData,
-                fill: false,
-                borderColor: 'rgba(54, 162, 235, 1)', // Warna garis untuk Pol
-                borderWidth: 2,
-                pointRadius: 5, // Ukuran titik
-                pointBackgroundColor: 'rgba(54, 162, 235, 1)', // Warna titik
-                pointBorderColor: 'rgba(54, 162, 235, 1)' // Warna border titik
-            }, {
-                label: 'HK',
-                data: hkData,
-                fill: false,
-                borderColor: 'rgba(255, 205, 86, 1)', // Warna garis untuk HK
-                borderWidth: 2,
-                pointRadius: 5, // Ukuran titik
-                pointBackgroundColor: 'rgba(255, 205, 86, 1)', // Warna titik
-                pointBorderColor: 'rgba(255, 205, 86, 1)' // Warna border titik
-            }]
-        },
-        options: {
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'bottom' // Tampilkan legend di bagian bawah
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Nilai'
-                    }
-                }
-            },
-            layout: {
-                padding: {
-                    left: 10,
-                    right: 10,
-                    top: 10,
-                    bottom: 10
-                }
-            },
-            responsive: true
-        }
-    });
+      }
+    }
+  });
 </script>
 
 
