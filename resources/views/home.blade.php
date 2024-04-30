@@ -720,6 +720,13 @@
                         </div>
                     </div>
 
+                    <div class="card" style="max-width: 600px; margin: auto; margin-bottom: 20px; background-color: white;">
+                      <div class="card-body">
+                          <h5 class="card-title text-center"> REKAP SHIFT </h5>
+                          <canvas id="vacuumMasakanChart"></canvas>
+                      </div>
+                  </div>
+
                       </div>
                   </div>
               </div>
@@ -1420,10 +1427,10 @@ var beVacuumChart = new Chart(ctxBeVacuum, {
       '10 PM', '11 PM', '12 AM', '1 AM', '2 AM', '3 AM', '4 AM', '5 AM'
   ];
   var vacuumMasakanData = [
-      12.5, 11.8, 12.0, 11.6, 11.9, 12.2, 12.3, 12.1, 
-      12.4, 11.7, 12.2, 12.5, 12.0, 12.3, 11.9, 12.2, 
-      12.1, 12.5, 11.8, 12.0, 11.6, 11.9, 12.2, 12.3
-  ]; // Data dalam satuan CmHg
+      5, 4.8, 4.9, 4.7, 5.1, 5.2, 5.3, 5.1, 
+      5.4, 5.2, 5.1, 5.3, 5.2, 5.1, 5, 5.2, 
+      5.1, 5.5, 5.8, 5.7, 5.6, 5.5, 5.3, 5.2
+  ]; // Data dalam satuan ton
 
   // Membuat grafik Vacuum Masakan (CmHg)
   var ctxVacuumMasakan = document.getElementById('vacuumMasakanChart').getContext('2d');
@@ -1451,7 +1458,7 @@ var beVacuumChart = new Chart(ctxBeVacuum, {
                   beginAtZero: false,
                   scaleLabel: {
                       display: true,
-                      labelString: 'Vacuum (CmHg)'
+                      labelString: 'Vacuum (ton)'
                   }
               },
               x: {
