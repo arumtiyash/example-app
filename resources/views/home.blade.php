@@ -946,6 +946,42 @@
         </div>
     </div> 
 
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Grafik Masakan</div>
+            <div class="card-body">
+                <canvas id="masakanSummaryChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Grafik Tetes</div>
+            <div class="card-body">
+                <canvas id="tetesSummaryChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Grafik Tekanan Uap</div>
+            <div class="card-body">
+                <canvas id="tekananuapSummaryChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Grafik Vacuum Masakan</div>
+            <div class="card-body">
+                <canvas id="vacuumMasakanSummaryChart"></canvas>
+            </div>
+        </div>
+    </div>
+
 
 
             </div>
@@ -2440,6 +2476,364 @@
     }
   });
 </script>
+
+<script>
+    // Data untuk Masakan
+    var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
+    var brixMasA = [25.0, 30.0, 20.0];
+    var hkMasA = [30.0, 35.0, 25.0];
+    var volMasA = [30.0, 40.0, 55.0];
+    var brixMasC = [20.0, 25.0, 15.0];
+    var hkMasC = [35.0, 20.0, 40.0];
+    var volMasC = [55.0, 30.0, 25.0];
+    var brixMasD = [30.0, 35.0, 20.0];
+    var hkMasD = [60.0, 20.0, 50.0];
+    var volMasD = [40.0, 60.0, 30.0];
+  
+    // Membuat grafik Masakan
+    var ctxMasakan = document.getElementById('masakanSummaryChart').getContext('2d');
+    var masakanChart = new Chart(ctxMasakan, {
+      type: 'line',
+      data: {
+        labels: labelsShift,
+        datasets: [{
+          label: 'BRIX MAS A',
+          data: brixMasA,
+          borderColor: 'rgba(255, 99, 132, 1)',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'HK MAS A',
+          data: hkMasA,
+          borderColor: 'rgba(54, 162, 235, 1)',
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'VOL MAS A',
+          data: volMasA,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'BRIX MAS C',
+          data: brixMasC,
+          borderColor: 'rgba(153, 102, 255, 1)',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(153, 102, 255, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'HK MAS C',
+          data: hkMasC,
+          borderColor: 'rgba(255, 159, 64, 1)',
+          backgroundColor: 'rgba(255, 159, 64, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(255, 159, 64, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'VOL MAS C',
+          data: volMasC,
+          borderColor: 'rgba(255, 205, 86, 1)',
+          backgroundColor: 'rgba(255, 205, 86, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(255, 205, 86, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'BRIX MAS D',
+          data: brixMasD,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'HK MAS D',
+          data: hkMasD,
+          borderColor: 'rgba(153, 102, 255, 1)',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(153, 102, 255, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'VOL MAS D',
+          data: volMasD,
+          borderColor: 'rgba(255, 159, 64, 1)',
+          backgroundColor: 'rgba(255, 159, 64, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(255, 159, 64, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
+            title: {
+              display: true,
+              text: 'Nilai'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Shift'
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+<script>
+    // Data untuk Tetes
+    var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
+    var brixTetes = [25.0, 35.0, 20.0];
+    var polTetes = [55.0, 30.0, 45.0];
+    var hkTetes = [30.0, 25.0, 40.0];
+    var tonTetes = [50.0, 35.0, 40.0];
+  
+    // Membuat grafik Tetes
+    var ctxTetes = document.getElementById('tetesSummaryChart').getContext('2d');
+    var tetesChart = new Chart(ctxTetes, {
+      type: 'line',
+      data: {
+        labels: labelsShift,
+        datasets: [{
+          label: 'Brix',
+          data: brixTetes,
+          borderColor: 'rgba(255, 99, 132, 1)',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'Pol',
+          data: polTetes,
+          borderColor: 'rgba(54, 162, 235, 1)',
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'HK',
+          data: hkTetes,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'Ton',
+          data: tonTetes,
+          borderColor: 'rgba(153, 102, 255, 1)',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(153, 102, 255, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
+            title: {
+              display: true,
+              text: 'Nilai'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Shift'
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+<script>
+    // Data untuk Tekanan Uap
+    var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
+    var uapBaru = [20.00, 45.00, 30.00];
+    var uapBekas = [15.00, 30.00, 20.00];
+    var uapNira1 = [20.00, 15.00, 35.00];
+    var uapMenengah = [25.00, 10.00, 15.00];
+  
+    // Membuat grafik Tekanan Uap
+    var ctxTekananUap = document.getElementById('tekananuapSummaryChart').getContext('2d');
+    var tekananUapChart = new Chart(ctxTekananUap, {
+      type: 'line',
+      data: {
+        labels: labelsShift,
+        datasets: [{
+          label: 'Uap Baru',
+          data: uapBaru,
+          borderColor: 'rgba(255, 99, 132, 1)',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'Uap Bekas',
+          data: uapBekas,
+          borderColor: 'rgba(54, 162, 235, 1)',
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'Uap Nira 1',
+          data: uapNira1,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'Uap Menengah',
+          data: uapMenengah,
+          borderColor: 'rgba(153, 102, 255, 1)',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(153, 102, 255, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
+            title: {
+              display: true,
+              text: 'Nilai'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Shift'
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+<script>
+    // Data untuk Vacuum Masakan
+    var labelsShift = ['PAGI', 'SIANG', 'MALAM'];
+    var vacuum1 = [20.00, 25.00, 15.00];
+    var vacuum2 = [15.0, 45.0, 30.0];
+    var vacuum3 = [20.0, 55.0, 10.0];
+    var vacuum4 = [20.0, 35.0, 15.0];
+    var vacuum5 = [25.0, 15.0, 40.0];
+    var vacuum6 = [45.0, 20.0, 35.0];
+  
+    // Membuat grafik Vacuum Masakan
+    var ctxVacuumMasakan = document.getElementById('vacuumMasakanSummaryChart').getContext('2d');
+    var vacuumMasakanChart = new Chart(ctxVacuumMasakan, {
+      type: 'line',
+      data: {
+        labels: labelsShift,
+        datasets: [{
+          label: 'Vacuum 1',
+          data: vacuum1,
+          borderColor: 'rgba(255, 99, 132, 1)',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'Vacuum 2',
+          data: vacuum2,
+          borderColor: 'rgba(54, 162, 235, 1)',
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'Vacuum 3',
+          data: vacuum3,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'Vacuum 4',
+          data: vacuum4,
+          borderColor: 'rgba(153, 102, 255, 1)',
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(153, 102, 255, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'Vacuum 5',
+          data: vacuum5,
+          borderColor: 'rgba(255, 159, 64, 1)',
+          backgroundColor: 'rgba(255, 159, 64, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(255, 159, 64, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }, {
+          label: 'Vacuum 6',
+          data: vacuum6,
+          borderColor: 'rgba(255, 205, 86, 1)',
+          backgroundColor: 'rgba(255, 205, 86, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(255, 205, 86, 1)',
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
+            title: {
+              display: true,
+              text: 'Nilai'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Shift'
+            }
+          }
+        }
+      }
+    });
+  </script>
 
 
         </body>
