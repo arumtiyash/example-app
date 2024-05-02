@@ -344,6 +344,7 @@
         <!-- End Navbar -->
 
         <!-- Dropdown Pilihan Hari, Jam, Lokasi-->
+        <!--   DIV KHUSUS UNTUK BAGIAN ATAS FORM   -->
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -573,6 +574,7 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script>
                 function updateJamGiling() {
@@ -608,6 +610,135 @@
                         const lokasi = lokasiInput.options[lokasiInput.selectedIndex].text;
 
                         summaryContent.innerHTML = `
+=======
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    function updateJamGiling() {
+        var now = new Date();
+        var jamGiling = now.toLocaleTimeString('en-US', { hour12: false });
+        document.getElementById('jam').value = jamGiling;
+    }
+    // Pemanggilan awal fungsi updateJamGiling
+    updateJamGiling();
+    // Panggil fungsi updateJamGiling setiap detik
+    setInterval(updateJamGiling, 1000);
+</script>
+<div class ="container">
+  <div class="row row-cols-1 row-cols-sm-2">
+    
+          <div class="col-lg-3 col-sm"> 
+              <div class="card mb-2" style="padding: 5px; margin-bottom: 10px;"> <!-- Mengurangi padding pada card -->
+                  <div class="card-header p-2 pt-1" style="padding-bottom: 3px; height: 60px;"> <!-- Mengurangi padding pada card header -->
+                      <div class="icon icon-md  icon-shape shadow-dark bg-gradient-dark shadow text-center  border-radius-xl mt-n1  position-absolute" style="padding: 2px;left: 10px;"> <!-- Mengurangi padding pada ikon -->
+                          <i class="material-icons opacity-10" style="font-size: 10px;">weekend</i> <!-- Ubah ukuran ikon -->
+                      </div>
+                      <div class="text-end pt-1">
+                          <p class="text-sm mb-0 text-capitalize" style="font-size: 12px;">Ringkasan</p> 
+                          <h4 id="summary-title" class="mb-0" style="font-size: 16px; margin-bottom: 3px;">Ringkasan Input</h4> 
+                      </div>
+                  </div>
+                  <div class="card-body p-2" style="padding-top: 3px; height: 100px;"> <!-- Mengurangi padding pada card body -->
+                      <div id="summary-content">
+                          <p style="font-size: 12px; margin-bottom: 3px;">Tanggal: </p>
+                          <p style="font-size: 12px; margin-bottom: 3px;">Jam: </p> 
+                          <p style="font-size: 12px; margin-bottom: 3px;">Hari Giling Ke-: </p> 
+                          <p style="font-size: 12px; margin-bottom: 3px;">Lokasi: </p> 
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm mt-sm-0 mt-4">
+              <div class="card mb-2 " style="padding: 5px;width: 200px; margin-bottom: 10px"> <!-- Mengurangi padding pada card -->
+                  <div class="card-header p-2 pt-2 bg-transparent " style="height: 70px;"> <!-- Mengurangi padding pada card header -->
+                      <div class="icon icon-md icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
+                          <i class="material-icons opacity-10 position-relative ml-">store</i>
+                          
+                      </div>
+                      <div class="text-end pt-1">
+                      <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">TEBU DIGILING</p>
+                          <h4 class="mb-0">34,5 TON</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2" style="padding: 5px; width: 200px;margin-bottom: 10px;"> <!-- Mengurangi padding pada card -->
+                  <div class="card-header p-2 pt-2 bg-transparent" style="height: 70px;"> <!-- Mengurangi padding pada card header -->
+                      <div class="icon icon-md icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
+                          <i class="material-icons opacity-10 position-relative ml-">store</i>
+                          
+                      </div>
+                      <div class="text-end pt-1">
+                      <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">SHS</p>
+                          <h4 class="mb-0">34,5 TON</h4>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm mt-sm-0 mt-4">
+              <div class="card mb-2 " style="padding: 5px;width: 200px; margin-bottom: 10px"> <!-- Mengurangi padding pada card -->
+                  <div class="card-header p-2 pt-2 bg-transparent " style="height: 70px;"> <!-- Mengurangi padding pada card header -->
+                      <div class="icon icon-md icon-shape bg-gradient-warning shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
+                          <i class="material-icons opacity-10 position-relative ml-">store</i>
+                          
+                      </div>
+                      <div class="text-end pt-1">
+                      <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">MASINIS</p>
+                          <h4 class="mb-0">ANTON</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2" style="padding: 5px; width: 200px;margin-bottom: 10px;"> <!-- Mengurangi padding pada card -->
+                  <div class="card-header p-2 pt-2 bg-transparent" style="height: 70px;"> <!-- Mengurangi padding pada card header -->
+                      <div class="icon icon-md icon-shape bg-gradient-warning shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-fill" viewBox="0 0 25 20">
+                          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                        </svg>  
+                      </div>
+                      <div class="text-end pt-1">
+                      <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">CHEMIKER</p>
+                          <h4 class="mb-0">TONI</h4>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm">
+              <div class="card mb-2" style="padding: 5px; margin-bottom: 10px;height: 170px;margin-left:auto"> <!-- Mengurangi padding pada card -->
+              <div class="card-header p-2 pt-1" style="padding-bottom: 3px; height: 60px;"> <!-- ngatur container background hitam transparan -->
+                      <div class="icon icon-md icon-shape bg-gradient-dark shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
+                        <i class="material-icons opacity-10">leaderboard</i>
+                      </div>
+                        <div class="text-end pt-1">
+                            <p class="text-sm mb-0 text-capitalize" style="font-size: 100px;">SHS</p>
+                            <h4 id="summary-title" class="mb-0" style="font-size: 16px; margin-bottom: 3px;">% TEBU</h4> 
+                        </div>
+                      </div>
+                      <div class="text-center pt-5">
+                            <h3 class="mt-0">0,00</h3>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const tanggalInput = document.getElementById('tanggal');
+      const jamInput = document.getElementById('jam');
+      const hariKeInput = document.getElementById('hari-ke');
+      const hariNamaInput = document.getElementById('hari-nama');
+      const lokasiInput = document.getElementById('lokasi');
+      const summaryContent = document.getElementById('summary-content');
+
+      // Fungsi untuk memperbarui ringkasan input
+      function updateSummary() {
+          const tanggal = tanggalInput.value;
+          const jam = new Date().toLocaleTimeString('en-US', { hour12: false });
+          const hariKe = hariKeInput.value;
+          const hariNama = hariNamaInput.options[hariNamaInput.selectedIndex].text;
+          const lokasi = lokasiInput.options[lokasiInput.selectedIndex].text;
+
+          summaryContent.innerHTML = `
+>>>>>>> 6eb82401c9c38c111922effeea5292492f216726
               <p>Tanggal: ${tanggal}</p>
               <p>Jam: ${jam}</p>
               <p>Hari Giling Ke-${hariKe}: ${hariNama}</p>
@@ -631,6 +762,8 @@
         </body>
         </div>
 
+
+        <!--   DIV KHUSUS UNTUK BAGIAN ANLISIS STATISTIK -->
         <!-- ini adalah general card geberal statistic-->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -827,6 +960,7 @@
                 </div>
             </div>
 
+            <!--   DIV KHUSUS UNTUK TAMPILAN DASHBOARD SUMMARY  -->
             <title>PLOEG Dashboard</title>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
                 rel="stylesheet">
@@ -879,6 +1013,8 @@
             </div>
             </div>
 
+
+            <!--  DIV KHUSUS UNTUK BAGIAN SUMMARY ATAU BAGIAN BAWAH  -->
             <!-- container PLOEG 2 -->
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -999,13 +1135,55 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
 
+
+              <!--DIV KHUSUS UNTUK TABEL JAM BERHENTI-->
+            <div class="table-responsive">
+                <table id="jamBerhentiTable" class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Jam</th>
+                            <th scope="col">Mulai Berhenti</th>
+                            <th scope="col">s/d</th>
+                            <th scope="col">Mulai Giling</th>
+                            <th scope="col">Keterangan</th>
+                            <th scope="col">Lama (menit)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data akan diisi melalui JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+
+              <!--DIV KHUSUS UNTUK TABEL SUMMARY JAM BERHENTI-->
+              <div class="table-responsive">
+                <table id="jamBerhentiSummaryTable" class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Waktu</th>
+                            <th scope="col">Mulai Berhenti</th>
+                            <th scope="col">s/d</th>
+                            <th scope="col">Mulai Giling</th>
+                            <th scope="col">Keterangan</th>
+                            <th scope="col">Lama (menit)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data akan diisi melalui JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+
         </body>
 
+
+        <!--  SCRIPT KHUSUS UNTUK DALAM CONTAINER ANALISIS STATISTIK PRODUKSI  -->
         <script>
             // Data grafik Tebu Digiling per Jam
             var labelsTebuDigiling = ['6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
@@ -1777,6 +1955,11 @@
                 }
             });
         </script>
+
+
+
+
+        <!--   JS SCRIPT KHUSUS UNTUK DI DALAM DASHBOARD SUMMARY  -->
         <script>
             // Data untuk PLOEG JAM TEBU DIGILING
             var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
@@ -2021,6 +2204,8 @@
     `;
         </script>
 
+
+        <!--   SCRIPT KHUSUS UNTUK SUMMARY ANALISI GKP HINGGA VACUUM MASAKAN  -->
         <script>
             // Data untuk Analisa GKP
             var labelsShift = ['PAGI', 'SIANG', 'MALAM', '1 HARI'];
@@ -2831,675 +3016,88 @@
             });
         </script>
 
-</body>
 
-{{-- <h2 class="font-weight-bolder mb-0">General Statistics</h2>
-  <div class="column">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagram Batang Tebu Digiling per Jam</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
-<body>
-    <div>
-        <canvas id="myBarChart" width="400" height="400"></canvas>
-    </div>
-    <script>
-        // Data diagram batang
-        var labels = ['6', '7', '8', '9', '10', '11', '12', '13'];
-        var tebuPerJam = [10.0, 12.0, 5.0, 15.0, 18.0, 20.0, 17.0, 16.0];
-        var tebuSampaiSekarang = [8.0, 10.0, 3.0, 8.0, 14.0, 18.0, 10.0, 9.0];
-        var barData = {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Tebu Digiling per Jam',
-                    data: tebuPerJam,
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                },
-                {
-                    label: 'Tebu Digiling s.d Sekarang',
-                    data: tebuSampaiSekarang,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }
-            ]
-        };
-        // Inisialisasi diagram batang
-        var ctx = document.getElementById('myBarChart').getContext('2d');
-        var myBarChart = new Chart(ctx, {
-            type: 'bar',
-            data: barData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+  <!--SCRIPT KHUSUS UNTUK TABEL SUMMARY JAM BERHENTI-->
+                    <script>
+                        // Fungsi untuk menambahkan baris ke tabel berdasarkan data
+                        function tambahBarisTabel(data) {
+                        var tabelBody = document.getElementById('jamBerhentiTable').getElementsByTagName('tbody')[0];
+                        var newRow = tabelBody.insertRow();
+                        newRow.innerHTML = `
+                            <td>${data.jam}</td>
+                            <td>${data.mulaiBerhenti}</td>
+                            <td>${data.sampai}</td>
+                            <td>${data.mulaiGiling}</td>
+                            <td>${data.keterangan}</td>
+                            <td>${data.lama}</td>
+                        `;
+                        }
+                    
+                        // Contoh data dummy
+                        var dummyData = [
+                        { jam: '06:00', mulaiBerhenti: '06:00', sampai: 's/d', mulaiGiling: '06:00', keterangan: '-', lama: 0 },
+                        { jam: '07:00', mulaiBerhenti: '07:00', sampai: 's/d', mulaiGiling: '07:00', keterangan: '-', lama: 0 },
+                        // Lanjutkan menambahkan data dummy sesuai kebutuhan...
+                        ];
+                    
+                        // Tambahkan baris-baris dari data dummy ke tabel
+                        dummyData.forEach(function(data) {
+                        tambahBarisTabel(data);
+                        });
+                    
+                        // Fungsi untuk menambahkan baris baru dengan data
+                        function tambahBarisDariSumberData(data) {
+                        tambahBarisTabel(data);
+                        }
+                    
+                        // Panggil fungsi ini dengan data yang diterima dari sumber data
+                        var dataDariSumberData = { jam: '08:00', mulaiBerhenti: '08:00', sampai: 's/d', mulaiGiling: '08:00', keterangan: '-', lama: 0 };
+                        tambahBarisDariSumberData(dataDariSumberData);
+                    </script>
+
+    <!--DIV KHUSUS UNTUK TABEL SUMMARY JAM BERHENTI-->
+    <!-- JavaScript -->
+            <script>
+                // Data dummy untuk jam berhenti
+                var jamBerhentiData = [
+                    { waktu: "Pagi", mulaiBerhenti: "0:00:00", s_d: "0,0", mulaiGiling: "0:00:00", keterangan: "0,0", lama: "0,0" },
+                    { waktu: "Siang", mulaiBerhenti: "0:00:00", s_d: "0,0", mulaiGiling: "0:00:00", keterangan: "0,0", lama: "0,0" },
+                    { waktu: "Malam", mulaiBerhenti: "0:00:00", s_d: "0,0", mulaiGiling: "0:00:00", keterangan: "0,0", lama: "0,0" },
+                    { waktu: "1 Hari", mulaiBerhenti: "0:00:00", s_d: "0,0", mulaiGiling: "0:00:00", keterangan: "0,0", lama: "0,0" }
+                ];
+
+                // Ambil tabel
+                var tabel = document.getElementById("jamBerhentiSummaryTable");
+
+                // Loop melalui data dan tambahkan baris-baris ke dalam tabel
+                for (var i = 0; i < jamBerhentiData.length; i++) {
+                    var row = tabel.insertRow(i + 1); // Mulai dari indeks 1 untuk baris data, setelah baris header
+                    var cellIndex = 0; // Indeks sel dalam baris
+
+                    // Loop melalui properti pada objek data dan tambahkan sel ke dalam baris
+                    for (var key in jamBerhentiData[i]) {
+                        var cell = row.insertCell(cellIndex); // Tambahkan sel baru ke dalam baris
+                        cell.innerHTML = jamBerhentiData[i][key]; // Isi sel dengan nilai properti
+                        cellIndex++; // Pindah ke sel berikutnya dalam baris
                     }
                 }
-            }
-        });
-    </script>
-</body>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagram Batang Produksi SHS</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-  <div>
-      <canvas id="myBarChart" width="400" height="400"></canvas>
-  </div>
-
-  <script>
-      // Data diagram batang
-      var labels = ['1', '2', '3', '4', '5', '6', '7', '8'];
-      var produksiPerJam = [15.0, 11.0, 13.0, 9.0, 10.0, 13.0, 14.0, 18.0];
-      var produksiSampaiSekarang = [15.0, 26.0, 39.0, 48.0, 58.0, 71.0, 85.0, 0.0];
-      var persentaseTebu = [100, 86.67, 74, 60, 51.43, 46.67, 48.24, 0]; // Persentase tebu
-
-      var barData = {
-          labels: labels,
-          datasets: [
-              {
-                  label: 'Produksi SHS per Jam (Ton)',
-                  data: produksiPerJam,
-                  backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                  borderColor: 'rgba(54, 162, 235, 1)',
-                  borderWidth: 1
-              },
-              {
-                  label: 'Produksi SHS s.d Sekarang (Ton)',
-                  data: produksiSampaiSekarang,
-                  backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                  borderColor: 'rgba(255, 99, 132, 1)',
-                  borderWidth: 1
-              },
-              {
-                  label: '% Tebu',
-                  data: persentaseTebu,
-                  type: 'line',
-                  yAxisID: 'percentage',
-                  borderColor: 'rgba(75, 192, 192, 1)',
-                  backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                  borderWidth: 2,
-                  pointRadius: 0
-              }
-          ]
-      };
-
-      // Inisialisasi diagram batang
-      var ctx = document.getElementById('myBarChart').getContext('2d');
-      var myBarChart = new Chart(ctx, {
-          type: 'bar',
-          data: barData,
-          options: {
-              scales: {
-                  y: {
-                      beginAtZero: true
-                  },
-                  yAxes: [{
-                      id: 'percentage',
-                      type: 'linear',
-                      position: 'right',
-                      ticks: {
-                          min: 0,
-                          max: 100
-                      }
-                  }]
-              }
-          }
-      });
-  </script>
-</body>
-</div> --}}
-
-{{-- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bar Chart</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-    <div>
-        <canvas id="myBarChart" width="400" height="400"></canvas>
-    </div>
-
-    <script>
-        // Data diagram batang
-        var barData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'Sales',
-                data: [65, 59, 80, 81, 56, 55, 40],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        };
-
-        // Inisialisasi diagram batang
-        var ctx = document.getElementById('myBarChart').getContext('2d');
-        var myBarChart = new Chart(ctx, {
-            type: 'bar',
-            data: barData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-</body> --}}
-
-{{-- </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-5 col-sm-5">
-        <div class="card  mb-2">
-  <div class="card-header p-3 pt-2">
-    <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
-      <i class="material-icons opacity-10">weekend</i>
-    </div>
-    <div class="text-end pt-1">
-      <p class="text-sm mb-0 text-capitalize">Bookings</p>
-      <h4 class="mb-0">281</h4>
-    </div>
-  </div>
-
-  <hr class="dark horizontal my-0">
-  <div class="card-footer p-3">
-    <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week</p>
-  </div>
-</div>
-
-        <div class="card  mb-2">
-  <div class="card-header p-3 pt-2">
-    <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl mt-n4 position-absolute">
-      <i class="material-icons opacity-10">leaderboard</i>
-    </div>
-    <div class="text-end pt-1">
-      <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-      <h4 class="mb-0">2,300</h4>
-    </div>
-  </div>
-
-  <hr class="dark horizontal my-0">
-  <div class="card-footer p-3">
-    <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than last month</p>
-  </div>
-</div>
-
-      </div>
-      <div class="col-lg-5 col-sm-5 mt-sm-0 mt-4">
-        <div class="card  mb-2">
-  <div class="card-header p-3 pt-2 bg-transparent">
-    <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-      <i class="material-icons opacity-10">store</i>
-    </div>
-    <div class="text-end pt-1">
-      <p class="text-sm mb-0 text-capitalize ">Revenue</p>
-      <h4 class="mb-0 ">34k</h4>
-    </div>
-  </div>
-
-  <hr class="horizontal my-0 dark">
-  <div class="card-footer p-3">
-    <p class="mb-0 "><span class="text-success text-sm font-weight-bolder">+1% </span>than yesterday</p>
-  </div>
-</div>
-
-        <div class="card ">
-  <div class="card-header p-3 pt-2 bg-transparent">
-    <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-      <i class="material-icons opacity-10">person_add</i>
-    </div>
-    <div class="text-end pt-1">
-      <p class="text-sm mb-0 text-capitalize ">Followers</p>
-      <h4 class="mb-0 ">+91</h4>
-    </div>
-  </div>
-
-  <hr class="horizontal my-0 dark">
-  <div class="card-footer p-3">
-    <p class="mb-0 ">Just updated</p>
-  </div>
-</div>
-
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-10">
-        <div class="card mb-4 ">
-  <div class="d-flex">
-    <div class="icon icon-shape icon-lg bg-gradient-success shadow text-center border-radius-xl mt-n3 ms-4">
-      <i class="material-icons opacity-10" aria-hidden="true">language</i>
-    </div>
-    <h6 class="mt-3 mb-2 ms-3 ">Sales by Country</h6>
-  </div>
-  <div class="card-body p-3">
-    <div class="row">
-      <div class="col-lg-6 col-md-7">
-        <div class="table-responsive">
-          <table class="table align-items-center ">
-            <tbody>
-              <tr>
-                <td class="w-30">
-                  <div class="d-flex px-2 py-1 align-items-center">
-                    <div>
-                      <img src="./assets/img/icons/flags/US.png" alt="Country flag">
-                    </div>
-                    <div class="ms-4">
-                      <p class="text-xs font-weight-bold mb-0 ">Country:</p>
-                      <h6 class="text-sm font-weight-normal mb-0 ">United States</h6>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div class="text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Sales:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">2500</h6>
-                  </div>
-                </td>
-                <td>
-                  <div class="text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Value:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">$230,900</h6>
-                  </div>
-                </td>
-                <td class="align-middle text-sm">
-                  <div class="col text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Bounce:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">29.9%</h6>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="w-30">
-                  <div class="d-flex px-2 py-1 align-items-center">
-                    <div>
-                      <img src="./assets/img/icons/flags/DE.png" alt="Country flag">
-                    </div>
-                    <div class="ms-4">
-                      <p class="text-xs font-weight-bold mb-0 ">Country:</p>
-                      <h6 class="text-sm font-weight-normal mb-0 ">Germany</h6>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div class="text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Sales:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">3.900</h6>
-                  </div>
-                </td>
-                <td>
-                  <div class="text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Value:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">$440,000</h6>
-                  </div>
-                </td>
-                <td class="align-middle text-sm">
-                  <div class="col text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Bounce:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">40.22%</h6>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="w-30">
-                  <div class="d-flex px-2 py-1 align-items-center">
-                    <div>
-                      <img src="./assets/img/icons/flags/GB.png" alt="Country flag">
-                    </div>
-                    <div class="ms-4">
-                      <p class="text-xs font-weight-bold mb-0 ">Country:</p>
-                      <h6 class="text-sm font-weight-normal mb-0 ">Great Britain</h6>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div class="text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Sales:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">1.400</h6>
-                  </div>
-                </td>
-                <td>
-                  <div class="text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Value:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">$190,700</h6>
-                  </div>
-                </td>
-                <td class="align-middle text-sm">
-                  <div class="col text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Bounce:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">23.44%</h6>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="w-30">
-                  <div class="d-flex px-2 py-1 align-items-center">
-                    <div>
-                      <img src="./assets/img/icons/flags/BR.png" alt="Country flag">
-                    </div>
-                    <div class="ms-4">
-                      <p class="text-xs font-weight-bold mb-0 ">Country:</p>
-                      <h6 class="text-sm font-weight-normal mb-0 ">Brasil</h6>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div class="text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Sales:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">562</h6>
-                  </div>
-                </td>
-                <td>
-                  <div class="text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Value:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">$143,960</h6>
-                  </div>
-                </td>
-                <td class="align-middle text-sm">
-                  <div class="col text-center">
-                    <p class="text-xs font-weight-bold mb-0 ">Bounce:</p>
-                    <h6 class="text-sm font-weight-normal mb-0 ">32.14%</h6>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-5">
-        <div id="map" class="mt-0 mt-lg-n4"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-lg-5 mb-lg-0 mb-4">
-    <div class="card z-index-2 mt-4">
-  <div class="card-body mt-n5 px-3">
-    <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1 mb-3">
-      <div class="chart">
-        <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
-      </div>
-    </div>
-    <h6 class="ms-2 mt-4 mb-0"> Active Users </h6>
-    <p class="text-sm ms-2"> (<span class="font-weight-bolder">+11%</span>) than last week </p>
-    <div class="container border-radius-lg">
-      <div class="row">
-        <div class="col-3 py-3 ps-0">
-          <div class="d-flex mb-2">
-            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-primary text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">groups</i>
-            </div>
-            <p class="text-xs my-auto font-weight-bold">Users</p>
-          </div>
-          <h4 class="font-weight-bolder">42K</h4>
-          <div class="progress w-75">
-            <div class="progress-bar bg-dark w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-        <div class="col-3 py-3 ps-0">
-          <div class="d-flex mb-2">
-            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">ads_click</i>
-            </div>
-            <p class="text-xs mt-1 mb-0 font-weight-bold">Clicks</p>
-          </div>
-          <h4 class="font-weight-bolder">1.7m</h4>
-          <div class="progress w-75">
-            <div class="progress-bar bg-dark w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-        <div class="col-3 py-3 ps-0">
-          <div class="d-flex mb-2">
-            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-warning text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">receipt</i>
-            </div>
-            <p class="text-xs mt-1 mb-0 font-weight-bold">Sales</p>
-          </div>
-          <h4 class="font-weight-bolder">399$</h4>
-          <div class="progress w-75">
-            <div class="progress-bar bg-dark w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-        <div class="col-3 py-3 ps-0">
-          <div class="d-flex mb-2">
-            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-danger text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">category</i>
-            </div>
-            <p class="text-xs mt-1 mb-0 font-weight-bold">Items</p>
-          </div>
-          <h4 class="font-weight-bolder">74</h4>
-          <div class="progress w-75">
-            <div class="progress-bar bg-dark w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  </div>
-  <div class="col-lg-7">
-    <div class="card z-index-2">
-  <div class="card-header pb-0">
-    <h6>Sales overview</h6>
-    <p class="text-sm">
-      <i class="fa fa-arrow-up text-success"></i>
-      <span class="font-weight-bold">4% more</span> in 2021
-    </p>
-  </div>
-  <div class="card-body p-3">
-    <div class="chart">
-      <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-    </div>
-  </div>
-</div>
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12">
-    <div id="globe" class="position-absolute end-0 top-10 mt-sm-3 mt-7 me-lg-7">
-      <canvas width="700" height="600" class="w-lg-100 h-lg-100 w-75 h-75 me-lg-0 me-n10 mt-lg-5"></canvas>
-    </div>
-  </div>
-</div>
-
-
-                <footer class="footer py-4  ">
-  <div class="container-fluid">
-    <div class="row align-items-center justify-content-lg-between">
-      <div class="col-lg-6 mb-lg-0 mb-4">
-        <div class="copyright text-center text-sm text-muted text-lg-start">
-          © <script>
-            document.write(new Date().getFullYear())
-          </script>,
-          made with <i class="fa fa-heart"></i> by
-          <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-          for a better web.
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-          <li class="nav-item">
-            <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-
-            </div>
-
-         
-       </main>
-    
-
-      
-          <div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-      <i class="material-icons py-2">settings</i>
-    </a>
-    <div class="card shadow-lg">
-      <div class="card-header pb-0 pt-3">
-        <div class="float-start">
-          <h5 class="mt-3 mb-0">Material UI Configurator</h5>
-          <p>See our dashboard options.</p>
-        </div>
-        <div class="float-end mt-4">
-          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
-            <i class="material-icons">clear</i>
-          </button>
-        </div>
-        <!-- End Toggle Button -->
-      </div>
-      <hr class="horizontal dark my-1">
-      <div class="card-body pt-sm-3 pt-0">
-        <!-- Sidebar Backgrounds -->
-        <div>
-          <h6 class="mb-0">Sidebar Colors</h6>
-        </div>
-        <a href="javascript:void(0)" class="switch-trigger background-color">
-          <div class="badge-colors my-2 text-start">
-            <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
-          </div>
-        </a>
-
-        <!-- Sidenav Type -->
-        
-        <div class="mt-3">
-          <h6 class="mb-0">Sidenav Type</h6>
-          <p class="text-sm">Choose between 2 different sidenav types.</p>
-        </div>
-
-        <div class="d-flex">
-          <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" onclick="sidebarType(this)">Dark</button>
-          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-transparent" onclick="sidebarType(this)">Transparent</button>
-          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
-        </div>
-
-        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
-        
-
-        <!-- Navbar Fixed -->
-        
-        <div class="mt-3 d-flex">
-          <h6 class="mb-0">Navbar Fixed</h6>
-          <div class="form-check form-switch ps-0 ms-auto my-auto">
-            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
-          </div>
-        </div>
-        
-
-        
-        <hr class="horizontal dark my-3">
-        <div class="mt-2 d-flex">
-          <h6 class="mb-0">Light / Dark</h6>
-          <div class="form-check form-switch ps-0 ms-auto my-auto">
-            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
-          </div>
-        </div>
-        <hr class="horizontal dark my-sm-4">
-        
-        
-        <a class="btn bg-gradient-info w-100" href="https://www.creative-tim.com/product/material-dashboard-pro">Free Download</a>
-        
-        
-        <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard">View documentation</a>
-        
-        <div class="w-100 text-center">
-          <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-          <h6 class="mt-3">Thank you for sharing!</h6>
-          
-          <a href="https://twitter.com/intent/tweet?text=Check%20Material%20UI%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-          </a>
-          
-
-          
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-          </a>
-          
-        </div>
-      </div>
-    </div>
-</div>
-
-      
-      
-
-
-
-
-
-
- --}}
-
-<!--   Core JS Files   -->
-<script src="./assets/js/core/popper.min.js"></script>
-<script src="./assets/js/core/bootstrap.min.js"></script>
-{{-- <script src="./assets/js/plugins/perfect-scrollbar.min.js" ></script>
-<script src="./assets/js/plugins/smooth-scrollbar.min.js" ></script> --}}
-
-{{-- <script>
-  var win = navigator.platform.indexOf('Win') > -1;
-  if (win && document.querySelector('#sidenav-scrollbar')) {
-    var options = {
-      damping: '0.5'
-    }
-    Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-  }
-</script> --}}
-
-<!-- Github buttons -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-
-<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="./assets/js/material-dashboard.min.js?v=3.1.0"></script>
+            </script>
+  
 </body>
 
-</html>
+
+
+
+            <!--   Core JS Files   -->
+            <script src="./assets/js/core/popper.min.js"></script>
+            <script src="./assets/js/core/bootstrap.min.js"></script>
+            {{-- <script src="./assets/js/plugins/perfect-scrollbar.min.js" ></script>
+            <script src="./assets/js/plugins/smooth-scrollbar.min.js" ></script> --}}
+            <!-- Github buttons -->
+            <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+            <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+            <script src="./assets/js/material-dashboard.min.js?v=3.1.0"></script>
+            </body>
+            </html>
 
