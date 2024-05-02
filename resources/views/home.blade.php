@@ -427,15 +427,7 @@
                         </div>
                         <div class="col-md-2">
                             <label for="hari-nama" class="filter-label">Hari Giling:</label>
-                            <select id="hari-nama" class="form-control filter-select">
-                                <option value="senin">Senin</option>
-                                <option value="selasa">Selasa</option>
-                                <option value="rabu">Rabu</option>
-                                <option value="kamis">Kamis</option>
-                                <option value="jumat">Jumat</option>
-                                <option value="sabtu">Sabtu</option>
-                                <option value="minggu">Minggu</option>
-                            </select>
+                            <input type="text" id="hari-nama" class="form-control filter-select" readonly>
                         </div>
                         <div class="col-md-2">
                             <label for="lokasi" class="filter-label">Pilih Lokasi: <i
@@ -453,7 +445,7 @@
 
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2">
-                    <div class="col-lg-3 col-sm">
+                    <div class="col-lg-4 col-sm">
                         <div class="card mb-2" style="padding: 1%; margin-bottom: 2%;">
                             <!-- Menggunakan persentase untuk padding dan margin -->
                             <div class="card-header p-2 pt-1" style="padding-bottom: 1%; height: 13%;">
@@ -481,7 +473,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm mt-sm-0 mt-4">
+                    <div class="col-lg-4 col-sm mt-sm-0 mt-4">
                         <div class="card mb-2 " style="padding: 1%; width: 100%; margin-bottom: 2%;">
                             <!-- Menggunakan persentase untuk padding, width, dan margin -->
                             <div class="card-header p-2 pt-2 bg-transparent " style="height: 15%;">
@@ -513,50 +505,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm mt-sm-0 mt-4">
-                        <div class="card mb-2 " style="padding: 1%; width: 100%; margin-bottom: 2%;">
-                            <!-- Menggunakan persentase untuk padding, width, dan margin -->
-                            <div class="card-header p-2 pt-2 bg-transparent " style="height: 15%;">
-                                <!-- Menggunakan persentase untuk padding dan height -->
-                                <div class="icon icon-md icon-shape bg-gradient-warning shadow-success text-center border-radius-xl mt-n2 position-absolute"
-                                    style="left: 10%;">
-                                    <i class="material-icons opacity-10 position-relative ml-">store</i>
-                                </div>
-                                <div class="text-end pt-1">
-                                    <p class="text-sm mb-0 text-capitalize" style="font-size: 0.8rem;">MASINIS</p>
-                                    <!-- Menggunakan rem untuk ukuran font -->
-                                    <h4 class="mb-0">ANTON</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-2" style="padding: 1%; width: 100%; margin-bottom: 2%;">
-                            <!-- Menggunakan persentase untuk padding, width, dan margin -->
-                            <div class="card-header p-2 pt-2 bg-transparent" style="height: 15%;">
-                                <!-- Menggunakan persentase untuk padding dan height -->
-                                <div class="icon icon-md icon-shape bg-gradient-warning shadow-success text-center border-radius-xl mt-n2 position-absolute"
-                                    style="left: 10%;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                                        fill="white" class="bi bi-person-fill" viewBox="0 0 25 20">
-                                        <path
-                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                    </svg>
-                                </div>
-                                <div class="text-end pt-1">
-                                    <p class="text-sm mb-0 text-capitalize" style="font-size: 0.8rem;">CHEMIKER</p>
-                                    <!-- Menggunakan rem untuk ukuran font -->
-                                    <h4 class="mb-0">TONI</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm">
+                    <div class="col-lg-4 col-sm">
                         <div class="card mb-2"
                             style="padding: 1%; margin-bottom: 2%; height: 170px; margin-left:auto;">
                             <!-- Menggunakan persentase untuk padding, margin, dan height -->
-                            <div class="card-header p-2 pt-1" style="padding-bottom: 1%; height: 13%;">
+                            <div class="card-header p-2 pt-1" style="padding-bottom: 1%; height: 35%;">
                                 <!-- Menggunakan persentase untuk padding dan height -->
-                                <div class="icon icon-md icon-shape bg-gradient-dark shadow-success text-center border-radius-xl mt-n2 position-absolute"
-                                    style="left: 10%;">
+                                <div class="icon icon-md  icon-shape shadow-dark bg-gradient-dark shadow text-center  border-radius-xl mt-n1  position-absolute"
+                                    style="padding: 2%;left: 10%;">
                                     <i class="material-icons opacity-10">leaderboard</i>
                                 </div>
                                 <div class="text-end pt-1">
@@ -572,196 +528,169 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-<<<<<<< HEAD
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <script>
-                function updateJamGiling() {
-                    var now = new Date();
-                    var jamGiling = now.toLocaleTimeString('en-US', {
-                        hour12: false
-                    });
-                    document.getElementById('jam').value = jamGiling;
-                }
-                // Pemanggilan awal fungsi updateJamGiling
-                updateJamGiling();
-                // Panggil fungsi updateJamGiling setiap detik
-                setInterval(updateJamGiling, 1000);
-            </script>
+                <div class="container">
+                    <div class="row ">
+                        <div class="list-group list-group-horizontal" style="border-radius: 20px;">
+                            <div class="col-lg-3 col-sm ">
+                                <li class="list-group-item card "
+                                    style="background-color: #FCD384;border-radius: 10px;margin-top:30px;">
+                                    <p style="font-family: Karla; font-size: 24px; margin: 10px;">MASINIS</p>
+                                </li>
+                            </div>
+                            <div class="col-lg-3 col-sm">
+                                <li class="list-group-item card"style="border-radius: 10px;margin-top:20px;">
+                                    <p class="text-sm text-capitalize" style="font-size: 24px;">PAGI</p>
+                                    <div class="text-end">
+                                        <div class="text-center">
+                                            <h5 class="mb-0"
+                                                style="display: inline-block; border-bottom: 2px solid black;">TONI
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-lg-3 col-sm">
+                                <li class="list-group-item card"style="border-radius: 10px;margin-top:20px;">
+                                    <p class="text-sm text-capitalize" style="font-size: 24px;">SIANG</p>
+                                    <div class="text-end">
+                                        <div class="text-center">
+                                            <h5 class="mb-0"
+                                                style="display: inline-block; border-bottom: 2px solid black;">TONI
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-lg-3 col-sm">
+                                <li class="list-group-item card"style="border-radius: 10px;margin-top:20px;">
+                                    <p class="text-sm text-capitalize" style="font-size: 24px;">MALAM</p>
+                                    <div class="text-end">
+                                        <div class="text-center">
+                                            <h5 class="mb-0"
+                                                style="display: inline-block; border-bottom: 2px solid black;">TONI
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row ">
+                        <div class="list-group list-group-horizontal" style="border-radius: 20px;">
+                            <div class="col-lg-3 col-sm ">
+                                <li class="list-group-item card"
+                                    style="background-color: #FCD384;border-radius: 10px;margin-top:30px;">
+                                    <p style="font-family: Karla; font-size: 24px; margin: 10px;">CHEMIKER</p>
+                                </li>
+                            </div>
+                            <div class="col-lg-3 col-sm">
+                                <li class="list-group-item card"style="border-radius: 10px;margin-top:20px;">
+                                    <p class="text-sm text-capitalize" style="font-size: 24px;">PAGI</p>
+                                    <div class="text-end">
+                                        <div class="text-center">
+                                            <h5 class="mb-0"
+                                                style="display: inline-block; border-bottom: 2px solid black;">TONI
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-lg-3 col-sm">
+                                <li class="list-group-item card"style="border-radius: 10px;margin-top:20px;">
+                                    <p class="text-sm text-capitalize" style="font-size: 24px;">SIANG</p>
+                                    <div class="text-end">
+                                        <div class="text-center">
+                                            <h5 class="mb-0"
+                                                style="display: inline-block; border-bottom: 2px solid black;">TONI
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="col-lg-3 col-sm">
+                                <li class="list-group-item card"style="border-radius: 10px;margin-top:20px;">
+                                    <p class="text-sm text-capitalize" style="font-size: 24px;">MALAM</p>
+                                    <div class="text-end">
+                                        <div class="text-center">
+                                            <h5 class="mb-0"
+                                                style="display: inline-block; border-bottom: 2px solid black;">TONI
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const tanggalInput = document.getElementById('tanggal');
-                    const jamInput = document.getElementById('jam');
-                    const hariKeInput = document.getElementById('hari-ke');
-                    const hariNamaInput = document.getElementById('hari-nama');
-                    const lokasiInput = document.getElementById('lokasi');
-                    const summaryContent = document.getElementById('summary-content');
-
-                    // Fungsi untuk memperbarui ringkasan input
-                    function updateSummary() {
-                        const tanggal = tanggalInput.value;
-                        const jam = new Date().toLocaleTimeString('en-US', {
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <script>
+                    function updateJamGiling() {
+                        var now = new Date();
+                        var jamGiling = now.toLocaleTimeString('en-US', {
                             hour12: false
                         });
-                        const hariKe = hariKeInput.value;
-                        const hariNama = hariNamaInput.options[hariNamaInput.selectedIndex].text;
-                        const lokasi = lokasiInput.options[lokasiInput.selectedIndex].text;
+                        document.getElementById('jam').value = jamGiling;
+                    }
+                    // Pemanggilan awal fungsi updateJamGiling
+                    updateJamGiling();
+                    // Panggil fungsi updateJamGiling setiap detik
+                    setInterval(updateJamGiling, 1000);
+                </script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+                <script>
+                    document.getElementById('tanggal').addEventListener('change', function() {
+                        var selectedDate = new Date(this.value);
+                        var days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+                        var gilingDay = days[selectedDate.getDay()];
+                        document.getElementById('hari-nama').value = gilingDay;
+                    });
+                </script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const tanggalInput = document.getElementById('tanggal');
+                        const jamInput = document.getElementById('jam');
+                        const hariKeInput = document.getElementById('hari-ke');
+                        const hariNamaInput = document.getElementById('hari-nama');
+                        const lokasiInput = document.getElementById('lokasi');
+                        const summaryContent = document.getElementById('summary-content');
 
-                        summaryContent.innerHTML = `
-=======
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    function updateJamGiling() {
-        var now = new Date();
-        var jamGiling = now.toLocaleTimeString('en-US', { hour12: false });
-        document.getElementById('jam').value = jamGiling;
-    }
-    // Pemanggilan awal fungsi updateJamGiling
-    updateJamGiling();
-    // Panggil fungsi updateJamGiling setiap detik
-    setInterval(updateJamGiling, 1000);
-</script>
-<div class ="container">
-  <div class="row row-cols-1 row-cols-sm-2">
-    
-          <div class="col-lg-3 col-sm"> 
-              <div class="card mb-2" style="padding: 5px; margin-bottom: 10px;"> <!-- Mengurangi padding pada card -->
-                  <div class="card-header p-2 pt-1" style="padding-bottom: 3px; height: 60px;"> <!-- Mengurangi padding pada card header -->
-                      <div class="icon icon-md  icon-shape shadow-dark bg-gradient-dark shadow text-center  border-radius-xl mt-n1  position-absolute" style="padding: 2px;left: 10px;"> <!-- Mengurangi padding pada ikon -->
-                          <i class="material-icons opacity-10" style="font-size: 10px;">weekend</i> <!-- Ubah ukuran ikon -->
-                      </div>
-                      <div class="text-end pt-1">
-                          <p class="text-sm mb-0 text-capitalize" style="font-size: 12px;">Ringkasan</p> 
-                          <h4 id="summary-title" class="mb-0" style="font-size: 16px; margin-bottom: 3px;">Ringkasan Input</h4> 
-                      </div>
-                  </div>
-                  <div class="card-body p-2" style="padding-top: 3px; height: 100px;"> <!-- Mengurangi padding pada card body -->
-                      <div id="summary-content">
-                          <p style="font-size: 12px; margin-bottom: 3px;">Tanggal: </p>
-                          <p style="font-size: 12px; margin-bottom: 3px;">Jam: </p> 
-                          <p style="font-size: 12px; margin-bottom: 3px;">Hari Giling Ke-: </p> 
-                          <p style="font-size: 12px; margin-bottom: 3px;">Lokasi: </p> 
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-sm mt-sm-0 mt-4">
-              <div class="card mb-2 " style="padding: 5px;width: 200px; margin-bottom: 10px"> <!-- Mengurangi padding pada card -->
-                  <div class="card-header p-2 pt-2 bg-transparent " style="height: 70px;"> <!-- Mengurangi padding pada card header -->
-                      <div class="icon icon-md icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
-                          <i class="material-icons opacity-10 position-relative ml-">store</i>
-                          
-                      </div>
-                      <div class="text-end pt-1">
-                      <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">TEBU DIGILING</p>
-                          <h4 class="mb-0">34,5 TON</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-2" style="padding: 5px; width: 200px;margin-bottom: 10px;"> <!-- Mengurangi padding pada card -->
-                  <div class="card-header p-2 pt-2 bg-transparent" style="height: 70px;"> <!-- Mengurangi padding pada card header -->
-                      <div class="icon icon-md icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
-                          <i class="material-icons opacity-10 position-relative ml-">store</i>
-                          
-                      </div>
-                      <div class="text-end pt-1">
-                      <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">SHS</p>
-                          <h4 class="mb-0">34,5 TON</h4>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-sm mt-sm-0 mt-4">
-              <div class="card mb-2 " style="padding: 5px;width: 200px; margin-bottom: 10px"> <!-- Mengurangi padding pada card -->
-                  <div class="card-header p-2 pt-2 bg-transparent " style="height: 70px;"> <!-- Mengurangi padding pada card header -->
-                      <div class="icon icon-md icon-shape bg-gradient-warning shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
-                          <i class="material-icons opacity-10 position-relative ml-">store</i>
-                          
-                      </div>
-                      <div class="text-end pt-1">
-                      <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">MASINIS</p>
-                          <h4 class="mb-0">ANTON</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-2" style="padding: 5px; width: 200px;margin-bottom: 10px;"> <!-- Mengurangi padding pada card -->
-                  <div class="card-header p-2 pt-2 bg-transparent" style="height: 70px;"> <!-- Mengurangi padding pada card header -->
-                      <div class="icon icon-md icon-shape bg-gradient-warning shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-fill" viewBox="0 0 25 20">
-                          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                        </svg>  
-                      </div>
-                      <div class="text-end pt-1">
-                      <p class="text-sm mb-0 text-capitalize" style="font-size: 5px;">CHEMIKER</p>
-                          <h4 class="mb-0">TONI</h4>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-sm">
-              <div class="card mb-2" style="padding: 5px; margin-bottom: 10px;height: 170px;margin-left:auto"> <!-- Mengurangi padding pada card -->
-              <div class="card-header p-2 pt-1" style="padding-bottom: 3px; height: 60px;"> <!-- ngatur container background hitam transparan -->
-                      <div class="icon icon-md icon-shape bg-gradient-dark shadow-success text-center border-radius-xl mt-n2 position-absolute"style="left: 10px;">
-                        <i class="material-icons opacity-10">leaderboard</i>
-                      </div>
-                        <div class="text-end pt-1">
-                            <p class="text-sm mb-0 text-capitalize" style="font-size: 100px;">SHS</p>
-                            <h4 id="summary-title" class="mb-0" style="font-size: 16px; margin-bottom: 3px;">% TEBU</h4> 
-                        </div>
-                      </div>
-                      <div class="text-center pt-5">
-                            <h3 class="mt-0">0,00</h3>
-                      </div>
-                  </div>
-              </div>
-          </div>
-  </div>
-</div>
+                        // Fungsi untuk memperbarui ringkasan input
+                        function updateSummary() {
+                            const tanggal = tanggalInput.value;
+                            const jam = new Date().toLocaleTimeString('en-US', {
+                                hour12: false
+                            });
+                            const hariKe = hariKeInput.value;
+                            const hariNama = hariNamaInput.options[hariNamaInput.selectedIndex].text;
+                            const lokasi = lokasiInput.options[lokasiInput.selectedIndex].text;
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-      const tanggalInput = document.getElementById('tanggal');
-      const jamInput = document.getElementById('jam');
-      const hariKeInput = document.getElementById('hari-ke');
-      const hariNamaInput = document.getElementById('hari-nama');
-      const lokasiInput = document.getElementById('lokasi');
-      const summaryContent = document.getElementById('summary-content');
-
-      // Fungsi untuk memperbarui ringkasan input
-      function updateSummary() {
-          const tanggal = tanggalInput.value;
-          const jam = new Date().toLocaleTimeString('en-US', { hour12: false });
-          const hariKe = hariKeInput.value;
-          const hariNama = hariNamaInput.options[hariNamaInput.selectedIndex].text;
-          const lokasi = lokasiInput.options[lokasiInput.selectedIndex].text;
-
-          summaryContent.innerHTML = `
->>>>>>> 6eb82401c9c38c111922effeea5292492f216726
+                            summaryContent.innerHTML = `
               <p>Tanggal: ${tanggal}</p>
               <p>Jam: ${jam}</p>
               <p>Hari Giling Ke-${hariKe}: ${hariNama}</p>
               <p>Lokasi: ${lokasi}</p>
           `;
-                    }
+                        }
 
-                    // Panggil fungsi update saat input berubah
-                    tanggalInput.addEventListener('input', updateSummary);
-                    hariKeInput.addEventListener('input', updateSummary);
-                    hariNamaInput.addEventListener('input', updateSummary);
-                    lokasiInput.addEventListener('input', updateSummary);
+                        // Panggil fungsi update saat input berubah
+                        tanggalInput.addEventListener('input', updateSummary);
+                        hariKeInput.addEventListener('input', updateSummary);
+                        hariNamaInput.addEventListener('input', updateSummary);
+                        lokasiInput.addEventListener('input', updateSummary);
 
-                    // Pemanggilan awal fungsi update
-                    updateSummary();
+                        // Pemanggilan awal fungsi update
+                        updateSummary();
 
-                    // Panggil fungsi update setiap detik
-                    setInterval(updateSummary, 1000);
-                });
-            </script>
+                        // Panggil fungsi update setiap detik
+                        setInterval(updateSummary, 1000);
+                    });
+                </script>
         </body>
         </div>
-
 
         <!--   DIV KHUSUS UNTUK BAGIAN ANLISIS STATISTIK -->
         <!-- ini adalah general card geberal statistic-->
@@ -1013,7 +942,6 @@
             </div>
             </div>
 
-
             <!--  DIV KHUSUS UNTUK BAGIAN SUMMARY ATAU BAGIAN BAWAH  -->
             <!-- container PLOEG 2 -->
             <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1139,8 +1067,7 @@
                 </div>
             </div>
 
-
-              <!--DIV KHUSUS UNTUK TABEL JAM BERHENTI-->
+            <!--DIV KHUSUS UNTUK TABEL JAM BERHENTI-->
             <div class="table-responsive">
                 <table id="jamBerhentiTable" class="table table-striped table-hover">
                     <thead class="thead-dark">
@@ -1159,9 +1086,8 @@
                 </table>
             </div>
 
-
-              <!--DIV KHUSUS UNTUK TABEL SUMMARY JAM BERHENTI-->
-              <div class="table-responsive">
+            <!--DIV KHUSUS UNTUK TABEL SUMMARY JAM BERHENTI-->
+            <div class="table-responsive">
                 <table id="jamBerhentiSummaryTable" class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
@@ -1179,9 +1105,7 @@
                 </table>
             </div>
 
-
         </body>
-
 
         <!--  SCRIPT KHUSUS UNTUK DALAM CONTAINER ANALISIS STATISTIK PRODUKSI  -->
         <script>
@@ -1956,9 +1880,6 @@
             });
         </script>
 
-
-
-
         <!--   JS SCRIPT KHUSUS UNTUK DI DALAM DASHBOARD SUMMARY  -->
         <script>
             // Data untuk PLOEG JAM TEBU DIGILING
@@ -2203,7 +2124,6 @@
         </ul>
     `;
         </script>
-
 
         <!--   SCRIPT KHUSUS UNTUK SUMMARY ANALISI GKP HINGGA VACUUM MASAKAN  -->
         <script>
@@ -3016,14 +2936,13 @@
             });
         </script>
 
-
-  <!--SCRIPT KHUSUS UNTUK TABEL SUMMARY JAM BERHENTI-->
-                    <script>
-                        // Fungsi untuk menambahkan baris ke tabel berdasarkan data
-                        function tambahBarisTabel(data) {
-                        var tabelBody = document.getElementById('jamBerhentiTable').getElementsByTagName('tbody')[0];
-                        var newRow = tabelBody.insertRow();
-                        newRow.innerHTML = `
+        <!--SCRIPT KHUSUS UNTUK TABEL SUMMARY JAM BERHENTI-->
+        <script>
+            // Fungsi untuk menambahkan baris ke tabel berdasarkan data
+            function tambahBarisTabel(data) {
+                var tabelBody = document.getElementById('jamBerhentiTable').getElementsByTagName('tbody')[0];
+                var newRow = tabelBody.insertRow();
+                newRow.innerHTML = `
                             <td>${data.jam}</td>
                             <td>${data.mulaiBerhenti}</td>
                             <td>${data.sampai}</td>
@@ -3031,73 +2950,119 @@
                             <td>${data.keterangan}</td>
                             <td>${data.lama}</td>
                         `;
-                        }
-                    
-                        // Contoh data dummy
-                        var dummyData = [
-                        { jam: '06:00', mulaiBerhenti: '06:00', sampai: 's/d', mulaiGiling: '06:00', keterangan: '-', lama: 0 },
-                        { jam: '07:00', mulaiBerhenti: '07:00', sampai: 's/d', mulaiGiling: '07:00', keterangan: '-', lama: 0 },
-                        // Lanjutkan menambahkan data dummy sesuai kebutuhan...
-                        ];
-                    
-                        // Tambahkan baris-baris dari data dummy ke tabel
-                        dummyData.forEach(function(data) {
-                        tambahBarisTabel(data);
-                        });
-                    
-                        // Fungsi untuk menambahkan baris baru dengan data
-                        function tambahBarisDariSumberData(data) {
-                        tambahBarisTabel(data);
-                        }
-                    
-                        // Panggil fungsi ini dengan data yang diterima dari sumber data
-                        var dataDariSumberData = { jam: '08:00', mulaiBerhenti: '08:00', sampai: 's/d', mulaiGiling: '08:00', keterangan: '-', lama: 0 };
-                        tambahBarisDariSumberData(dataDariSumberData);
-                    </script>
+            }
 
-    <!--DIV KHUSUS UNTUK TABEL SUMMARY JAM BERHENTI-->
-    <!-- JavaScript -->
-            <script>
-                // Data dummy untuk jam berhenti
-                var jamBerhentiData = [
-                    { waktu: "Pagi", mulaiBerhenti: "0:00:00", s_d: "0,0", mulaiGiling: "0:00:00", keterangan: "0,0", lama: "0,0" },
-                    { waktu: "Siang", mulaiBerhenti: "0:00:00", s_d: "0,0", mulaiGiling: "0:00:00", keterangan: "0,0", lama: "0,0" },
-                    { waktu: "Malam", mulaiBerhenti: "0:00:00", s_d: "0,0", mulaiGiling: "0:00:00", keterangan: "0,0", lama: "0,0" },
-                    { waktu: "1 Hari", mulaiBerhenti: "0:00:00", s_d: "0,0", mulaiGiling: "0:00:00", keterangan: "0,0", lama: "0,0" }
-                ];
+            // Contoh data dummy
+            var dummyData = [{
+                    jam: '06:00',
+                    mulaiBerhenti: '06:00',
+                    sampai: 's/d',
+                    mulaiGiling: '06:00',
+                    keterangan: '-',
+                    lama: 0
+                },
+                {
+                    jam: '07:00',
+                    mulaiBerhenti: '07:00',
+                    sampai: 's/d',
+                    mulaiGiling: '07:00',
+                    keterangan: '-',
+                    lama: 0
+                },
+                // Lanjutkan menambahkan data dummy sesuai kebutuhan...
+            ];
 
-                // Ambil tabel
-                var tabel = document.getElementById("jamBerhentiSummaryTable");
+            // Tambahkan baris-baris dari data dummy ke tabel
+            dummyData.forEach(function(data) {
+                tambahBarisTabel(data);
+            });
 
-                // Loop melalui data dan tambahkan baris-baris ke dalam tabel
-                for (var i = 0; i < jamBerhentiData.length; i++) {
-                    var row = tabel.insertRow(i + 1); // Mulai dari indeks 1 untuk baris data, setelah baris header
-                    var cellIndex = 0; // Indeks sel dalam baris
+            // Fungsi untuk menambahkan baris baru dengan data
+            function tambahBarisDariSumberData(data) {
+                tambahBarisTabel(data);
+            }
 
-                    // Loop melalui properti pada objek data dan tambahkan sel ke dalam baris
-                    for (var key in jamBerhentiData[i]) {
-                        var cell = row.insertCell(cellIndex); // Tambahkan sel baru ke dalam baris
-                        cell.innerHTML = jamBerhentiData[i][key]; // Isi sel dengan nilai properti
-                        cellIndex++; // Pindah ke sel berikutnya dalam baris
-                    }
+            // Panggil fungsi ini dengan data yang diterima dari sumber data
+            var dataDariSumberData = {
+                jam: '08:00',
+                mulaiBerhenti: '08:00',
+                sampai: 's/d',
+                mulaiGiling: '08:00',
+                keterangan: '-',
+                lama: 0
+            };
+            tambahBarisDariSumberData(dataDariSumberData);
+        </script>
+
+        <!--DIV KHUSUS UNTUK TABEL SUMMARY JAM BERHENTI-->
+        <!-- JavaScript -->
+        <script>
+            // Data dummy untuk jam berhenti
+            var jamBerhentiData = [{
+                    waktu: "Pagi",
+                    mulaiBerhenti: "0:00:00",
+                    s_d: "0,0",
+                    mulaiGiling: "0:00:00",
+                    keterangan: "0,0",
+                    lama: "0,0"
+                },
+                {
+                    waktu: "Siang",
+                    mulaiBerhenti: "0:00:00",
+                    s_d: "0,0",
+                    mulaiGiling: "0:00:00",
+                    keterangan: "0,0",
+                    lama: "0,0"
+                },
+                {
+                    waktu: "Malam",
+                    mulaiBerhenti: "0:00:00",
+                    s_d: "0,0",
+                    mulaiGiling: "0:00:00",
+                    keterangan: "0,0",
+                    lama: "0,0"
+                },
+                {
+                    waktu: "1 Hari",
+                    mulaiBerhenti: "0:00:00",
+                    s_d: "0,0",
+                    mulaiGiling: "0:00:00",
+                    keterangan: "0,0",
+                    lama: "0,0"
                 }
-            </script>
-  
+            ];
+
+            // Ambil tabel
+            var tabel = document.getElementById("jamBerhentiSummaryTable");
+
+            // Loop melalui data dan tambahkan baris-baris ke dalam tabel
+            for (var i = 0; i < jamBerhentiData.length; i++) {
+                var row = tabel.insertRow(i + 1); // Mulai dari indeks 1 untuk baris data, setelah baris header
+                var cellIndex = 0; // Indeks sel dalam baris
+
+                // Loop melalui properti pada objek data dan tambahkan sel ke dalam baris
+                for (var key in jamBerhentiData[i]) {
+                    var cell = row.insertCell(cellIndex); // Tambahkan sel baru ke dalam baris
+                    cell.innerHTML = jamBerhentiData[i][key]; // Isi sel dengan nilai properti
+                    cellIndex++; // Pindah ke sel berikutnya dalam baris
+                }
+            }
+        </script>
+
 </body>
 
-
-
-
-            <!--   Core JS Files   -->
-            <script src="./assets/js/core/popper.min.js"></script>
-            <script src="./assets/js/core/bootstrap.min.js"></script>
-            {{-- <script src="./assets/js/plugins/perfect-scrollbar.min.js" ></script>
+<!--   Core JS Files   -->
+<script src="./assets/js/core/popper.min.js"></script>
+<script src="./assets/js/core/bootstrap.min.js"></script>
+{{-- <script src="./assets/js/plugins/perfect-scrollbar.min.js" ></script>
             <script src="./assets/js/plugins/smooth-scrollbar.min.js" ></script> --}}
-            <!-- Github buttons -->
-            <script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
-            <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-            <script src="./assets/js/material-dashboard.min.js?v=3.1.0"></script>
-            </body>
-            </html>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="./assets/js/material-dashboard.min.js?v=3.1.0"></script>
+<script src="./resources/js/app.js"></script>
+</body>
+
+</html>
 
